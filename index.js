@@ -140,7 +140,7 @@ bot.on("guildMemberRemove", async (message, member, guild) => {
   let aurevoir = new Discord.RichEmbed()
     .setDescription(':sob:' + member.user.username + '** a quitté ** ' + " " + member.guild.name)
     .setFooter('Nous sommes désormais ' + member.guild.memberCount)
-    .setColor("RANDOM")
+    .setColor("RANDOM") 
   channel.send(aurevoir);
 });
 
