@@ -142,10 +142,15 @@ bot.on("message", async message => {
     var args = message.content.split(" ").slice(0);
     var args = args.slice(0).join(" ");
 
-
+if ((message.author.id != "364468738621308938") || (message.author.id != "468342061230456833")) {
     message.channel.send(
       "Votre message a été envoyé au staff :incoming_envelope:"
     );
+}
+else {
+  return message.channel.send("réponse envoyé!")
+ }
+
     if (message.content.startsWith("%")) return;
     var embed = new Discord.RichEmbed()
       .setColor("RANDOM")
@@ -164,6 +169,10 @@ bot.on("message", async message => {
   }
 
   if (message.content.startsWith("trak.reply")) {
+      if (
+          message.author.id !== "364468738621308938" ||
+          message.author.id !== "468342061230456833"
+        )
    
     var args = message.content.split(" ").slice(0);
     var Rargs = message.content
