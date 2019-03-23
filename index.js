@@ -156,9 +156,9 @@ bot.on("message", async message => {
       .setTitle("Nouvelle demande en dm")
       .addField(
         args,
-        "Envoyé par" +
+        "Envoyé par " +
           message.author.username +
-          "avec l'id" +
+          " avec l'id " +
           message.author.id
       );
     bot.guilds
@@ -170,7 +170,7 @@ bot.on("message", async message => {
   if (message.content.startsWith("trak.reply")) {
     if (
       message.author.id !== "468342061230456833" ||
-      message.author.id !== "364468738621308938"
+      message.author.id !== "468342061230456833"
     )
       return message.reply("Tu n'as pas le droit de faire ca");
     var args = message.content.split(" ").slice(0);
