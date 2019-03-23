@@ -136,6 +136,61 @@ bot.on("message", async message => {
   if (message.channel === "471036082222530571") {
     message.channel.send("@Fortnite News (ancien/family) @Fortnite News")
   }
+
+  if (message.author.bot) return;
+  if (message.channel.type === "dm") {
+    var args = message.content.split(" ").slice(0);
+    var args = args.slice(0).join(" ");
+
+    /*if (message.content.startsWith(config.prefix))
+      return message.channel.send(
+        ":x: s'il vous plaît utiliser la sur un vrai serveur cette commande! :x:"
+      );*/
+
+    message.channel.send(
+      "Votre message a été envoyé au staff :incoming_envelope:"
+    );
+    if (message.content.startsWith("%")) return;
+    var embed = new Discord.RichEmbed()
+      .setColor("RANDOM")
+      .setTitle("Nouvelle demande en dm")
+      .addField(
+        args,
+        "Envoyé par" +
+          message.author.username +
+          "avec l'id" +
+          message.author.id
+      );
+    bot.guilds
+      .get("469111638835068928")
+      .channels.get("469118311175815168")
+      .send(embed);
+  }
+
+  if (message.content.startsWith("trak.reply")) {
+    if (
+      message.author.id !== "468342061230456833" ||
+      message.author.id !== "364468738621308938"
+    )
+      return message.reply("Tu n'as pas le droit de faire ca");
+    var args = message.content.split(" ").slice(0);
+    var Rargs = message.content
+      .split(" ")
+      .slice(2)
+      .join(" ");
+    var userID = args[1];
+    if (isNaN(args[1]))
+      return message.reply(
+        "Veuillez preciser l'id de la personne pour reply"
+      ); //if args is Not A Number!
+    var embed = new Discord.RichEmbed()
+      .setColor("RANDOM")
+      .setTitle("Le staff vous as repondu")
+      .setDescription(Rargs)
+      .setFooter("ce message a été envoyé par: " + message.author.username);
+    bot.users.get(userID).send(embed);
+    message.channel.send("Repondu avec succes !").catch(console.error);
+  }
 });
 
 bot.on("guildMemberRemove", async (message, member, guild) => {
