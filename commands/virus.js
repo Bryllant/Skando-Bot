@@ -2,8 +2,6 @@
 module.exports.run = async (bot, message) => {
 
 
-
-if (command === `${prefix}Virus`) {
     message.delete();
   
     message.channel.send("**Activation du virus Token.exe ⚠**").then(message => {
@@ -47,8 +45,7 @@ if (command === `${prefix}Virus`) {
         );
       }, 3500);
     });
-  }
-};
+  };
 
 module.exports.help = {
     name: "virus"
