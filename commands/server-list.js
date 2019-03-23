@@ -3,7 +3,7 @@
 const Discord = require('discord.js')
 
 module.exports.run = async (bot, message) => {
-    const guilds = client.guilds
+    const guilds = bot.guilds
     .filter(g => g.memberCount > 0)
     .map(g => g.name)
     .join("\n");
