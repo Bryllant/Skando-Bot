@@ -129,8 +129,12 @@ bot.on("message", async message => {
     }
 
   if (message.content === "<@530517746677579776>") {
-    message.reply('Mon préfixe est **?**, pour voir mes commandes : **?help** ');
+    message.reply('Mon préfixe est **%**, pour voir mes commandes : **?help** ');
     console.log('bot mentionné');
+  }
+
+  if (message.channel === "471036082222530571") {
+    message.channel.send("@Fortnite News (ancien/family) @Fortnite News")
   }
 });
 
