@@ -141,7 +141,7 @@ bot.on("message", async message => {
   if (message.channel.type === "dm") {
     var args = message.content.split(" ").slice(0);
     var args = args.slice(0).join(" ");
-    if (message.author.hasPermission("MANAGE_MESSAGES")) return;
+
 
     message.channel.send(
       "Votre message a été envoyé au staff :incoming_envelope:"
