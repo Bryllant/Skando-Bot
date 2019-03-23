@@ -54,9 +54,9 @@ bot.on("ready", async message => {
           `faire des crêpes`,
           "améliorer mes commandes",
           `faire régner l'ordre`,
-          `?help || ${bot.guilds.size} serveurs`,
+          `%help || ${bot.guilds.size} serveurs`,
           `se perdre sur youtube`,
-          `?help || ${bot.users.size} membres`,
+          `%help || ${bot.users.size} membres`,
         ];
       
         setInterval(function () {
