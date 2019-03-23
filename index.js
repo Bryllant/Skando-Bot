@@ -141,11 +141,7 @@ bot.on("message", async message => {
   if (message.channel.type === "dm") {
     var args = message.content.split(" ").slice(0);
     var args = args.slice(0).join(" ");
-
-    /*if (message.content.startsWith(config.prefix))
-      return message.channel.send(
-        ":x: s'il vous plaît utiliser la sur un vrai serveur cette commande! :x:"
-      );*/
+    if (message.author.hasPermission("MANAGE_MESSAGES")) return;
 
     message.channel.send(
       "Votre message a été envoyé au staff :incoming_envelope:"
@@ -168,11 +164,7 @@ bot.on("message", async message => {
   }
 
   if (message.content.startsWith("trak.reply")) {
-    if (
-      message.author.id !== "468342061230456833" ||
-      message.author.id !== "468342061230456833"
-    )
-      return message.reply("Tu n'as pas le droit de faire ca");
+   
     var args = message.content.split(" ").slice(0);
     var Rargs = message.content
       .split(" ")
@@ -182,10 +174,10 @@ bot.on("message", async message => {
     if (isNaN(args[1]))
       return message.reply(
         "Veuillez preciser l'id de la personne pour reply"
-      ); //if args is Not A Number!
+      ); 
     var embed = new Discord.RichEmbed()
       .setColor("RANDOM")
-      .setTitle("Le staff vous as repondu")
+      .setTitle("Le staff vous a repondu")
       .setDescription(Rargs)
       .setFooter("ce message a été envoyé par: " + message.author.username);
     bot.users.get(userID).send(embed);
