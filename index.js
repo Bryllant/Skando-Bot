@@ -155,4 +155,3 @@ bot.on("guildMemberAdd", async (message, member, guild) => {
   channel.send(bienvenu);
  });
 
-bot.on("")
