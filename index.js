@@ -33,7 +33,7 @@ bot.on("message", async message => {
   let content = message.content.split(" ");
   let command = content[0];
   let args = content.slice(1);
-  let prefix = process.env.BOT_TOKEN;
+  let prefix = process.env.PREFIX;
 
 
   
@@ -44,7 +44,7 @@ bot.on("message", async message => {
 })
 
 
-bot.login(process.env.BOT_TOKEN)
+bot.login(process.env.TOKEN);
 
 bot.on("ready", async message => {
   console.log(`Le bot est allumé sur ${bot.guilds.size} serveurs et est a disposition de ${bot.users.size} membres `)
