@@ -4,7 +4,7 @@ module.exports.run = async (bot, message) => {
     if (!message.member.hasPermission('ADMINISTRATOR')) return;
     const sushi = new Discord.RichEmbed()
     .setColor("#008000")
-    .setFooter("Clique sur les réaction pour avoir le rôle")
+    .setFooter("Clique sur les réaction pour avoir le rôle", "Chaque role t'ouvrira un salon spécifique")
     .setFooter("En venant sur le serveur nous considérons que les règles sont lues et acceptés", "Pour avoir accès aux salons, cliquez sur la réaction :white_check_mark:")
     .setFooter("Role CsGo", "Pour avoir accès au salon cs cliquez sur la réaction csgo")
     .setFooter("Role fortnite", "Pour avoir accès au salon fortnite, cliquez sur la réaction fortnite")
