@@ -55,11 +55,8 @@ module.exports.run = async (bot, message) => {
     message.channel.send(warn);
     message.channel.send(role);
     
-} else {
-    return;
-    }
 }
-
+}
 message.delete()
     module.exports.help = {
     name: "regle"
