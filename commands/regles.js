@@ -38,7 +38,7 @@ module.exports.run = async (bot, message) => {
     .setDescription("5 warns : 3 jour de ban | 10 warns : ban a vie ")
     .addField("Nombre de warn toléré", "pour les fans 12 | pour les anciens 15 | au niveau 40 vous ne recevrez plus de warn")
 
-    const role = new Discord.RichEmbed()
+    const sushi = new Discord.RichEmbed()
     .setColor("#008000")
     .setFooter("Clique sur les réaction pour avoir le rôle")
     .setFooter("En venant sur le serveur nous considérons que les règles sont lues et acceptés", "Pour avoir accès aux salons, cliquez sur la réaction :white_check_mark:")
@@ -51,7 +51,7 @@ module.exports.run = async (bot, message) => {
     
     message.channel.send(embed);
     message.channel.send(warn);
-    message.channel.send(role);
+    message.channel.send(sushi);
     
 }
 }
