@@ -168,7 +168,7 @@ else {
       .send(embed);
   }
 
-  if (message.content.startsWith("trak.reply")) {
+  if (message.content.startsWith("dm.reply")) {
       if (
           message.author.id !== "364468738621308938" ||
           message.author.id !== "468342061230456833"
