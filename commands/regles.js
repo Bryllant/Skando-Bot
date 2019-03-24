@@ -43,48 +43,16 @@ module.exports.run = async (bot, message) => {
     .setFooter("Clique sur les réaction pour avoir le rôle")
     .setTitle("En venant sur le serveur nous considérons que les règles sont lues et acceptés")
     .setDescription("Pour avoir accès aux salons, cliquez sur la réaction :white_check_mark:")
-
+    .setFooter("Role CsGo", "Pour avoir accès au salon cs cliquez sur la réaction csgo")
+    .setFooter("Role fortnite", "Pour avoir accès au salon fortnite, cliquez sur la réaction fortnite")
+    .setFooter("Role notifié", "Pour avoir les notifs du serveur cliquez sur la réaction :bell:")
+    .setFooter("Role minecraft", "Pour avoir accès au salon minecraft, cliquez sur la réaction minecraft")
+    .setFooter("Role rocket league", "Pour avoir accès au salon de rocket league, cliquez sur la réaction rocketleague")
+    .setFooter("Role participant event", "Pour avoir la notif des events cliquez sur la réaction :tada: ")
     
-    const csgo = new Discord.RichEmbed()
-    .setTitle("Role CsGo")
-    .setDescription("Pour avoir la notif de CS cliquez sur la réaction :csgo:")
-    .setColor("#008000")
-
-    
-    const minecraft = new Discord.RichEmbed()
-    .setTitle("Role minecraft")
-    .setDescription("Pour avoir la notif minecraft, cliquez sur la réaction :minecraft:")
-    .setColor("#008000")
-
-    const rocket = new Discord.RichEmbed()
-    .setTitle("Role rocket league")
-    .setDescription("Pour avoir la notif de rocket league, cliquez sur la réaction :rocketleague: ")
-    .setColor("#008000")
-    
-    const fortnite = new Discord.RichEmbed()
-    .setTitle("Role fortnite news")
-    .setDescription("Pour avoir la notif des Fortnite News, cliquez sur la réaction  :fortnite:")
-    .setColor("#008000")
-    
-    const notif = new Discord.RichEmbed()
-    .setTitle("Role notifié")
-    .setDescription("Pour avoir les notifs du serveur cliquez sur la réaction  :bell:")
-    .setColor("#008000")
-    
-    const event = new Discord.RichEmbed()
-    .setTitle("Participant event")
-    .setDescription("Pour avoir la notif des events clique sur la réaction :tada: ")
-    .setColor("#008000")
-
     message.channel.send(embed);
     message.channel.send(warn);
     message.channel.send(role);
-    message.channel.send(fortnite);
-    message.channel.send(csgo);
-    message.channel.send(minecraft);
-    message.channel.send(rocket);
-    message.channel.send(notif);
-    message.channel.send(event);
     
 }
 }
