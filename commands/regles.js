@@ -6,7 +6,7 @@ module.exports.run = async (bot, message) => {
 
     const embed = new Discord.RichEmbed()
     
-    .setColor("RANDOM")
+    .setColor("#008000")
     .setFooter("Les règles")
     .setTitle("Voici les règles de ce serveur a respecter")
     .addField("1. Pas de menace envers autrui ", "Les menaces en tout genre seront sévèremment sanctionées allant du simple warn a un ban définitif")
@@ -31,29 +31,54 @@ module.exports.run = async (bot, message) => {
 
     
     const warn = new Discord.RichEmbed()
-    .setColor("RANDOM")
+    .setColor("#008000")
     .setFooter("Les warns")
     .setTitle("Les warns")
     .setTitle("Un warn est un avertissement vous en recevrez un a chaque fois qu'une règle n'a pas été respecté")
-    .setDescription("5 warns : 3 jour de ban")
-    .setDescription("10 warns : ban a vie ")
-    .addField("Nombre de warn toléré", "pour les fans 12 et pour les anciens 15 au niveau 40 vous ne recevrez plus de warn")
+    .setDescription("5 warns : 3 jour de ban || 10 warns : ban a vie ")
+    .addField("Nombre de warn toléré", "pour les fans 12 || pour les anciens 15 || au niveau 40 vous ne recevrez plus de warn")
 
     const role = new Discord.RichEmbed()
-    .setColor("RANDOM")
+    .setColor("#008000")
     .setFooter("Clique sur les réaction pour avoir le rôle")
     .setTitle("En venant sur le serveur nous considérons que les règles sont lues et acceptés")
     .setDescription("Pour avoir accès aux salons, cliquez sur la réaction :white_check_mark:")
+
+    
+    const csgo = new Discord.RichEmbed()
     .setDescription("Pour avoir la notif de CS cliquez sur la réaction :csgo:")
+    .setColor("#008000")
+
+    
+    const minecraft = new Discord.RichEmbed()
     .setDescription("Pour avoir la notif minecraft, cliquez sur la réaction :minecraft:")
+    .setColor("#008000")
+
+    const rocket = new Discord.RichEmbed()
     .setDescription("Pour avoir la notif de  rocket league, cliquez sur la réaction :rocketleague: ")
+    .setColor("#008000")
+    
+    const fortnite = new Discord.RichEmbed()
     .setDescription("Pour avoir la notif des Fortnite News, cliquez sur la réaction  :fortnite:")
+    .setColor("#008000")
+    
+    const notif = new Discord.RichEmbed()
     .setDescription("Pour avoir les notifs cliquez sur la réaction  :bell:")
-    .setDescription("Pour avoir la notif des events cliques sur la réaction :tada: ")
+    .setColor("#008000")
+    
+    const event = new Discord.RichEmbed()
+    .setDescription("Pour avoir la notif des events clique sur la réaction :tada: ")
+    .setColor("#008000")
 
     message.channel.send(embed);
     message.channel.send(warn);
     message.channel.send(role);
+    message.channel.send(fortnite);
+    message.channel.send(csgo);
+    message.channel.send(minecraft);
+    message.channel.send(rocket);
+    message.channel.send(notif);
+    message.channel.send(event);
     
 }
 }
