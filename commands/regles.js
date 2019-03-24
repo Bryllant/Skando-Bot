@@ -57,7 +57,6 @@ module.exports.run = async (bot, message) => {
     
 }
 }
-message.delete()
     module.exports.help = {
     name: "regle"
   }
