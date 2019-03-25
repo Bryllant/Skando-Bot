@@ -23,36 +23,36 @@ module.exports.run = async (bot, message, guild, channel) => {
 
     information.send(premaj).then(message => message.delete(60000));
     information.send("<@&505313884073099275> <@&506179552914047006>").then(message => message.delete(60000))
-    general.send("**La maj commence dans" + temps + "** secondes").then(message => {
+    general.send("La maj commence dans **60** secondes").then(message => {
       setTimeout(() => {
 
         message.edit("░░░░░░░░░░ 0%");
-      }, 8000);
+      }, 10000);
   
       setTimeout(() => {
 
         message.edit("▓▓░░░░░░░░ 20%");
-      }, 8000);
+      }, 10000);
   
       setTimeout(() => {
 
         message.edit("▓▓▓▓░░░░░░ 40%");
-      }, 8000);
+      }, 10000);
   
       setTimeout(() => {
 
         message.edit("▓▓▓▓▓▓░░░░ 60%");
-      }, 8000);
+      }, 10000);
   
       setTimeout(() => {
 
         message.edit("▓▓▓▓▓▓▓▓░░ 80%");
-      }, 8000);
+      }, 10000);
   
       setTimeout(() => {
 
         message.edit("▓▓▓▓▓▓▓▓▓▓ 100%");
-      }, 8000);
+      }, 10000);
   
       setTimeout(() => {
         message.edit("Début de la mise a jour du serveur✅");
