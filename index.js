@@ -194,24 +194,27 @@ else {
   }
 });
 
-bot.on("guildMemberRemove", async (message, member, guild) => {
-  const channel2 = member.guild.channel.find(ch => ch.name === '『🎉』bienvenue');
-  if (!channel2) return;
-  let aurevoir = new Discord.RichEmbed()
-    .setDescription(':sob:' + member.user.username + '** a quitté ** ' + " " + member.guild.name)
-    .setFooter('Nous sommes désormais ' + member.guild.memberCount)
-    .setColor("RANDOM") 
-  channel.send(aurevoir);
+
+ bot.on('guildMemberRemove', member => {
+  const aurevoir = member.guild.channels.find('name', '『🎉』bienvenue')
+
+  var aurevoirEmbed = new Discord.RichEmbed()
+    .setColor('#008000')
+    .setAuthor(member.user.tag + ' est partit', member.user.displayAvatarURL)
+    .addField(`Au revoir ${member.user.name} !`)
+    .setFooter(`Une personne nous a quitté`)
+    .setTimestamp()
+    return aurevoir.send(aurevoirEmbed);
 });
 
-bot.on("guildMemberAdd", async (message, member, guild) => {
-  const channel = member.guild.channels.find(ch => ch.name === '『🎉』bienvenue');
-  if (!channel) return;
-  let bienvenu = new Discord.RichEmbed()
-    .setDescription(':kissing_heart:' + member.user.username + '** a rejoins ** ' + " " + member.guild.name)
-    .setFooter('Nous sommes désormais ' + member.guild.memberCount)
-    .setColor("RANDOM")
-    .setThumbmail(message.author.displayAvatarURL)
-  channel.send(bienvenu);
- });
+bot.on('guildMemberAdd', member => {
+  const bienvenu = member.guild.channels.find('name', '『🎉』bienvenue')
 
+  var bienvenuEmbed = new Discord.RichEmbed()
+    .setColor('#008000')
+    .setAuthor(member.user.tag + ' est arrivé', member.user.displayAvatarURL)
+    .addField(`Bienvenu ${member.user.name} !`)
+    .setFooter(`Un nouveau membre est parmis nous`)
+    .setTimestamp()
+    return bienvenu.send(bienvenuEmbed);
+});
