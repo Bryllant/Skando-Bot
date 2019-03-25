@@ -56,14 +56,17 @@ module.exports.run = async (bot, message, guild, channel) => {
         message.edit("Début de la mise a jour du serveur✅");
       }, 600000);
     }); 
+    //METTRE LES @ L60/L64
     information.send(premaj).then(message => message.delete(60000));
-    information.send("<@&505313884073099275> <@&506179552914047006>").then(message => message.delete(60000))
-    setTimeout(() => {
+    information.send("<&505313884073099275> <&506179552914047006>").then(message => message.delete(60000))
+    await setTimeout(() => {
     }, 60000);
     information.send(maj)
-    information.send("<@&505313884073099275> <@&506179552914047006>")
+    information.send("<&505313884073099275> <&506179552914047006>")
     general.send(maj)
 }
 module.exports.help = {
     name: "maj"
   }
+
+  //METTRE LES @ L60/L64
