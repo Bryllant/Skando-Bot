@@ -54,10 +54,12 @@ module.exports.run = async (bot, message, guild, channel) => {
   
       setTimeout(() => {
         message.edit("Début de la mise a jour du serveur✅");
-      }, 1);
+      }, 600000);
     }); 
     information.send(premaj).then(message => message.delete(60000));
     information.send("<@&505313884073099275> <@&506179552914047006>").then(message => message.delete(60000))
+    setTimeout(() => {
+    }, 60000);
     information.send(maj)
     information.send("<@&505313884073099275> <@&506179552914047006>")
     general.send(maj)
