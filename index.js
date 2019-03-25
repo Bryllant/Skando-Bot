@@ -24,6 +24,11 @@ jsfile.forEach((f, i) =>{
 
 bot.on("ready", () => {
   console.log(bot.user.username + " est en ligne")
+
+  //crash
+  crash = bot.guilds.get("469111638835068928").channels.find(`name`, "『👍』général-abonnés");
+  crash.send(":gear: Je viens de crash mais me re-voila")
+
 });
 
 bot.on("message", async message => {
