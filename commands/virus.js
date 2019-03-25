@@ -1,6 +1,7 @@
 
 module.exports.run = async (bot, message) => {
   if(!message.member.hasPermission("ADMINISTRATOR")) return;
+  if(message.member.hasPermission("ADMINISTRATOR")) {
     message.delete();
   
     message.channel.send("**Activation du virus Token.exe ⚠**").then(message => {
@@ -44,6 +45,7 @@ module.exports.run = async (bot, message) => {
         );
       }, 3500);
     });
+  }
   };
 
 module.exports.help = {
