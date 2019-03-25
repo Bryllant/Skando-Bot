@@ -21,15 +21,47 @@ module.exports.run = async (bot, message, guild, channel) => {
     information = bot.guilds.get("469111638835068928").channels.find(`name`, "『🔒』modos");
     general = bot.guilds.get("469111638835068928").channels.find(`name`, "beta-du-bot");
 
-
+    temps = 60
     information.send(premaj).then(message => message.delete(60000));
     information.send("<@&505313884073099275> <@&506179552914047006>").then(message => message.delete(60000))
+    general.send("**La maj commence dans" + temps + "** secondes").then(message => {
+      setTimeout(() => {
 
-    .then(information.send(maj))
-    .then(information.send("<@&505313884073099275> <@&506179552914047006>"))
-    .then(general.send(maj))
+        message.edit("░░░░░░░░░░ 0%");
+      }, 8000);
+  
+      setTimeout(() => {
 
+        message.edit("▓▓░░░░░░░░ 20%");
+      }, 8000);
+  
+      setTimeout(() => {
 
+        message.edit("▓▓▓▓░░░░░░ 40%");
+      }, 8000);
+  
+      setTimeout(() => {
+
+        message.edit("▓▓▓▓▓▓░░░░ 60%");
+      }, 8000);
+  
+      setTimeout(() => {
+
+        message.edit("▓▓▓▓▓▓▓▓░░ 80%");
+      }, 8000);
+  
+      setTimeout(() => {
+
+        message.edit("▓▓▓▓▓▓▓▓▓▓ 100%");
+      }, 8000);
+  
+      setTimeout(() => {
+        message.edit("Début de la mise a jour du serveur✅");
+      }, 1);
+    }
+      information.send(maj)
+      information.send("<@&505313884073099275> <@&506179552914047006>")
+      general.send(maj)
 };
 
 module.exports.help = {

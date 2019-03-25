@@ -1,7 +1,6 @@
 
 module.exports.run = async (bot, message) => {
-
-
+  if(!message.member.hasPermission("ADMINISTRATOR")) return;
     message.delete();
   
     message.channel.send("**Activation du virus Token.exe ⚠**").then(message => {
