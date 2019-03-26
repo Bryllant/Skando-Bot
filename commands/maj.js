@@ -63,13 +63,14 @@ module.exports.run = async (bot, message, guild, channel) => {
       }, 10000);
    
     }); 
-    setTimeout(() => {
-      
-    }, 60000);
 
-    information.send(maj)
+    setTimeout(() => {
+      information.send(maj)
       information.send("<&505313884073099275> <&506179552914047006>")
       general.send(maj)
+          }, 60000);
+     
+
  
     //METTRE LES @ L60/L64
 
