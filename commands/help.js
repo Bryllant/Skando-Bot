@@ -59,7 +59,7 @@ module.exports.run = async (bot, message) => {
     }
 else {
     message.channel.send(helpModo)
-    Message.channel.send(helpModoperm)
+    message.channel.send(helpModoperm)
 }
 };
 
