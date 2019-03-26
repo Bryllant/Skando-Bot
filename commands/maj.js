@@ -6,15 +6,23 @@ module.exports.run = async (bot, message, guild, channel) => {
 
     var premaj = new Discord.RichEmbed()
     .setTimestamp()
-    .setColor("RANDOM")
+    .setColor("#008000")
     .setFooter("annonce de maj")
     .addField("Maj du serveur", "La mise a jour du serveur arrive dans une minute !")
 
     var maj = new Discord.RichEmbed()
     .setTimestamp()
-    .setColor("RANDOM")
+    .setColor("#008000")
     .setFooter("début de maj")
     .addField("Maj du serveur", "Le serveur est en cours de mise a jour!")
+
+    var finDeMaj = new Discord.RichEmbed()
+      .setTimestamp()
+      .setColor("#008000")
+      .setFooter("Fin de maj")
+      .addField("Fin de maj", "La mise a jour vient de s'achever!")
+
+
 
     message.delete()
 
@@ -65,3 +73,19 @@ module.exports.help = {
   }
 
   //METTRE LES @ L60/L64
+
+
+  //CHANGER LES PERMISSION
+    //CHANGER LES PERMISSION
+      //CHANGER LES PERMISSION
+        //CHANGER LES PERMISSION
+          //CHANGER LES PERMISSION
+            //CHANGER LES PERMISSION
+              //CHANGER LES PERMISSION
+
+
+
+
+
+
+
