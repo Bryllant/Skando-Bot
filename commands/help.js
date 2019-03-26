@@ -42,6 +42,7 @@ module.exports.run = async (bot, message) => {
     var helpModoperm = new Discord.RichEmbed()
     .setDescription("Commandes de modération")
     .setTimestamp()
+    .setColor("#008000")
     .addField("%kick", "exclure un membre")
     .addField("%ban", "bannir un membre")
     .addField("%clear", "Supprime un nombre de message défini")
