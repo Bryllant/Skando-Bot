@@ -72,6 +72,10 @@ module.exports.run = async (bot, message, guild, channel) => {
       general.send(maj)
  
     //METTRE LES @ L60/L64
+
+
+    //FIN DE MAJ
+    general.send(finDeMaj)
   
 }
 
@@ -89,7 +93,7 @@ module.exports.run = async (bot, message, guild, channel) => {
 
 
 
-general.send(finDeMaj)
+
 
 module.exports.help = {
   name: "maj"
