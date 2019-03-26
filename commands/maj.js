@@ -62,7 +62,7 @@ module.exports.run = async (bot, message, guild, channel) => {
         message.edit("Début de la mise a jour du serveur✅");
       }, 10000);
    
-    }); 
+    });
 
     setTimeout(() => {
       information.send(maj)
