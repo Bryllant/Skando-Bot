@@ -63,14 +63,15 @@ module.exports.run = async (bot, message, guild, channel) => {
       }, 10000);
    
     }); 
+    setTimeout(() => {
+      information.send(maj)
+      information.send("<&505313884073099275> <&506179552914047006>")
+      general.send(maj)
+    }, 10000);
+ 
     //METTRE LES @ L60/L64
-    information.send(maj)
-    information.send("<&505313884073099275> <&506179552914047006>")
-    general.send(maj)
+  
 }
-module.exports.help = {
-    name: "maj"
-  }
 
   //METTRE LES @ L60/L64
 
@@ -86,6 +87,8 @@ module.exports.help = {
 
 
 
+general.send(finDeMaj)
 
-
-
+module.exports.help = {
+  name: "maj"
+}
