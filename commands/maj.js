@@ -1,8 +1,10 @@
 const Discord = require('discord.js')
 
 module.exports.run = async (bot, message, guild, channel) => {
-
+    if (message.guild.id != "469111638835068928") return;
     if(!message.member.hasPermission("ADMINISTRATOR")) return;
+
+
 
     var premaj = new Discord.RichEmbed()
     .setTimestamp()
