@@ -30,8 +30,8 @@ module.exports.run = async (bot, message, guild, channel) => {
 
     information = bot.guilds.get("469111638835068928").channels.find(`name`, "『🔒』modos");
     general = bot.guilds.get("469111638835068928").channels.find(`name`, "beta-du-bot");
-    information.send(premaj).then(message => message.delete(120000));
-    information.send("<&505313884073099275> <&506179552914047006>").then(message => message.delete(120000))
+    information.send(premaj).then(message => message.delete(60000));
+    information.send("<&505313884073099275> <&506179552914047006>").then(message => message.delete(60000))
     
 
    await general.send("La maj commence dans **120** secondes").then(message => {
@@ -46,20 +46,15 @@ module.exports.run = async (bot, message, guild, channel) => {
       }, 20000);
   
       setTimeout(() => {
-
-        message.edit("La maj commence dans **60** secondes");
-      }, 20000);
-  
-      setTimeout(() => {
         message.edit("Début de la mise a jour du serveur dans minute");
-      }, 1);
+      }, 20000);
    
     });
 
     setTimeout(() => {
-      information.send(maj)
-      information.send("<&505313884073099275> <&506179552914047006>")
-      general.send(maj)
+      information.send(maj).then(message => message.delete(600000))
+      information.send("<&505313884073099275> <&506179552914047006>").then(message => message.delete(600000))
+      general.send(maj).then(message => message.delete(600000))
           }, 60000);
 
     setTimeout(() => {
