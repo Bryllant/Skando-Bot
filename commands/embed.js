@@ -26,3 +26,4 @@ module.exports.run = async (bot, message, args) => {
 module.exports.help = {
     name: "embed"
   }
+  //%embed <Couleur> <titre> / <description>
