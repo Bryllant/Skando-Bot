@@ -66,11 +66,11 @@ module.exports.run = async (bot, message, guild, channel) => {
    
     });
 
-    setTimeout(() => {
+    
       information.send(maj)
       information.send("<&505313884073099275> <&506179552914047006>")
       general.send(maj)
-          }, 60000);
+      
      
 
  
@@ -78,7 +78,7 @@ module.exports.run = async (bot, message, guild, channel) => {
 
 
     //FIN DE MAJ
-    general.send(finDeMaj)
+    //general.send(finDeMaj)
   
 }
 
