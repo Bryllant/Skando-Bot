@@ -46,10 +46,12 @@ module.exports.run = async (bot, message, guild, channel) => {
       }, 20000);
   
       setTimeout(() => {
-        message.edit("Début de la mise a jour du serveur dans minute");
+        message.edit("Début de la maintenance");
       }, 20000);
    
     });
+
+    //commencer les perms ici
 
     setTimeout(() => {
       information.send(maj).then(message => message.delete(600000))
@@ -59,24 +61,8 @@ module.exports.run = async (bot, message, guild, channel) => {
 
     setTimeout(() => {
       general.send(finDeMaj)
-    }, 60000000);
+    }, 600000);
 }
-
-  //METTRE LES @ L60/L64
-
-
-  //CHANGER LES PERMISSION
-    //CHANGER LES PERMISSION
-      //CHANGER LES PERMISSION
-        //CHANGER LES PERMISSION
-          //CHANGER LES PERMISSION
-            //CHANGER LES PERMISSION
-              //CHANGER LES PERMISSION
-
-
-
-
-
 
 module.exports.help = {
   name: "maj"
