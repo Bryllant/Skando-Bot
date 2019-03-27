@@ -10,7 +10,7 @@ module.exports.run = async (bot, message, guild, channel) => {
     .setTimestamp()
     .setColor("#008000")
     .setFooter("annonce de maj")
-    .addField("Maj du serveur", "La mise a jour du serveur arrive dans une minute !")
+    .addField("Maj du serveur", "La mise a jour du serveur arrive dans deux minutes !")
 
     var maj = new Discord.RichEmbed()
     .setTimestamp()
