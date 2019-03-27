@@ -129,7 +129,7 @@ bot.on("message", async message => {
     message.delete()
   }
 
-    if ((message.content === "<@403643401137815562>") && (message.member.hasPermission('MANAGE_MESSAGES'))) {
+    if ((message.content === "<@403643401137815562>") && (!message.member.hasPermission('MANAGE_MESSAGES'))) {
       message.delete()
     }
 

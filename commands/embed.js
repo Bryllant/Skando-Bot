@@ -2,7 +2,11 @@ const Discord = require('discord.js')
 
 module.exports.run = async (bot, message, args) => {
 
+    if(!message.member.hasPermission('MANAGE_MESSAGES')) return;
     if(!args) return message.channel.send("Il faut des arguments !")
+
+    prefix = "?"
+
 
     const color = args[0];
     const toslice = Math.floor(prefix.length +7 + color.length);
