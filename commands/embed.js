@@ -8,15 +8,15 @@ module.exports.run = async (bot, message, args) => {
     prefix = "?"
 
 
+    if(!args[0]) return message.channel.send("Il faut des arguments !");
+
     const color = args[0];
-    const toslice = Math.floor(14);
+    const toslice = Math.floor(prefix.length + 7 + color.length);
     const titre = message.content.split("/")[0].slice(toslice);
-    let reason = args.slice(1).join(" ");
-    
     const description = message.content.split("/")[1].slice(1);
 
     const embed = new Discord.RichEmbed()
-    .setColor(`${color}`)
+    .setColor(color)
     .setTitle(titre)
     .setDescription(description)
 
