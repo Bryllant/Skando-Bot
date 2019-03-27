@@ -9,8 +9,9 @@ module.exports.run = async (bot, message, args) => {
 
 
     const color = args[0];
-    const toslice = Math.floor(prefix.length +7 + color.length);
+    const toslice = Math.floor(14);
     const titre = message.content.split("/")[0].slice(toslice);
+    let reason = args.slice(1).join(" ");
     
     const description = message.content.split("/")[1].slice(1);
 
