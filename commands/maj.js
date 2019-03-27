@@ -34,43 +34,33 @@ module.exports.run = async (bot, message, guild, channel) => {
     information.send("<&505313884073099275> <&506179552914047006>").then(message => message.delete(60000))
     
 
-   await general.send("La maj commence dans **60** secondes").then(message => {
+   await general.send("La maj commence dans **120** secondes").then(message => {
       setTimeout(() => {
 
-        message.edit("La maj commence dans **50** secondes");
-      }, 10000);
+      message.edit("La maj commence dans **100** secondes");
+      }, 20000);
   
       setTimeout(() => {
 
-        message.edit("La maj commence dans **40** secondes");
-      }, 10000);
+        message.edit("La maj commence dans **80** secondes");
+      }, 20000);
   
       setTimeout(() => {
 
-        message.edit("La maj commence dans **30** secondes");
-      }, 10000);
+        message.edit("La maj commence dans **60** secondes");
+      }, 20000);
   
       setTimeout(() => {
-
-        message.edit("La maj commence dans **20** secondes");
-      }, 10000);
-  
-      setTimeout(() => {
-
-        message.edit("La maj commence dans **10** secondes");
-      }, 10000);
-  
-      setTimeout(() => {
-        message.edit("Début de la mise a jour du serveur✅");
-      }, 10000);
+        message.edit("Début de la mise a jour du serveur dans minute");
+      }, 1);
    
     });
 
-    
+    setTimeout(() => {
       information.send(maj)
       information.send("<&505313884073099275> <&506179552914047006>")
       general.send(maj)
-      
+          }, 60000);
      
 
  
@@ -78,7 +68,7 @@ module.exports.run = async (bot, message, guild, channel) => {
 
 
     //FIN DE MAJ
-    //general.send(finDeMaj)
+    general.send(finDeMaj)
   
 }
 
