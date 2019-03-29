@@ -197,50 +197,6 @@ else {
     bot.users.get(userID).send(embed);
     message.channel.send("Repondu avec succes !").catch(console.error);
   }
-  const auteur = [];
-  const warnBuffer = 3;
-  const maxBuffer = 5;
-
-  if(msg.author.id != bot.user.id){
-    var now = Math.floor(Date.now());
-    auteur.push({
-      "moment": now,
-      "auteur": msg.author.id,
-      "message": msg.content
-    });
-
-    matched = 0;
-
-    for (var i = 0; i < auteur.length; i++) {
-      if (auteur[i].time > now - 1000) {
-        matched++;
-        if (matched == warnBuffer && !warned) {
-          warned = true;
-          msg.reply("Arrête de spam si tu ne veux pas être banni");
-        }
-        if (matched == maxBuffer) {
-          if (!banned) {
-            msg.channel.send(msg.author + " a été ban pour spam. A qui le tour?");
-            banned = true;
-          }
-          // Ban le membre
-          var user = msg.channel.guild.members.find(member => member.user.id === msg.author.id);
-          if (user) {
-            user.ban().then((member) => {
-               console.log("Ban utilisé");
-           }).catch(() => {
-               //console.log("Pas assez de perms , il faut un module");
-           });
-          }
-        }
-      }
-      else if (auteur[i].time < now - 1000) {
-        auteur.splice(i);
-        warned = false;
-        banned = false;
-      }
-    }
-  }
 });
 
 
