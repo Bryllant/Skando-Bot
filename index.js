@@ -199,27 +199,19 @@ else {
   }
 });
 
-
- bot.on('guildMemberRemove', member => {
+bot.on('guildMemberAdd', member => {
   const aurevoir = member.guild.channels.find('name', '『🎉』bienvenue')
-
-  var aurevoirEmbed = new Discord.RichEmbed()
-    .setColor('#008000')
-    .setAuthor(member.user.tag + ' est partit', member.user.displayAvatarURL)
-    .addField(`Au revoir ${member.user.name} !`)
-    .setFooter(`Une personne nous a quitté`)
-    .setTimestamp()
-    return aurevoir.send(aurevoirEmbed);
+  member.send("Bienvenue")
+  let embed = new Discord.RichEmbed()
+      .setDescription(member.user.username + ' a rejoint le serveur')
+      .setFooter('Nous sommes désormais ' + member.guild.memberCount)
+      aurevoir.send(embed)
 });
 
-bot.on('guildMemberAdd', member => {
-  const bienvenu = member.guild.channels.find('name', '『🎉』bienvenue')
-
-  var bienvenuEmbed = new Discord.RichEmbed()
-    .setColor('#008000')
-    .setAuthor(member.user.tag + ' est arrivé', member.user.displayAvatarURL)
-    .addField(`Bienvenu ${member.user.name} !`)
-    .setFooter(`Un nouveau membre est parmis nous`)
-    .setTimestamp()
-    return bienvenu.send(bienvenuEmbed);
+bot.on('guildMemberRemove', member => {
+  const aurevoir = member.guild.channels.find('name', '『🎉』bienvenue')
+  let embed = new Discord.RichEmbed()
+      .setDescription(member.user.username + ' a quitté le serveur')
+      .setFooter('Nous sommes désormais ' + member.guild.memberCount)
+      aurevoir.send(embed)
 });
