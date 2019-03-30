@@ -1,7 +1,7 @@
 const Discord = require('discord.js')
 
 module.exports.run = async (bot, message, args) => {
-
+    message.delete()
     if(!message.member.hasPermission('MANAGE_MESSAGES')) return;
     if(!args) return message.channel.send("Il faut des arguments !")
 
