@@ -205,6 +205,7 @@ bot.on('guildMemberAdd', member => {
   let embed = new Discord.RichEmbed()
       .setDescription(member.user.username + ' a rejoint le serveur')
       .setFooter('Nous sommes désormais ' + member.guild.memberCount)
+      .setColor("#008000")
       aurevoir.send(embed)
 });
 
@@ -213,5 +214,6 @@ bot.on('guildMemberRemove', member => {
   let embed = new Discord.RichEmbed()
       .setDescription(member.user.username + ' a quitté le serveur')
       .setFooter('Nous sommes désormais ' + member.guild.memberCount)
+      .setColor("#008000")
       aurevoir.send(embed)
 });

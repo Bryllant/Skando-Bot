@@ -21,6 +21,7 @@ module.exports.run = async (bot, message, args) => {
     .setDescription(description)
 
     message.channel.send(embed);
+    message.delete()
     
 };
 
