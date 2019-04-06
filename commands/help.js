@@ -35,7 +35,7 @@ module.exports.run = async (bot, message) => {
     .addField("%bug", "un bug est survenu? Fait cette commande pour nous le signaler")
     .addField("%suggestion", "avec cette commande tu peux émettre tes suggestions pour le serveur")
     .addField("%youtube", "lance une recherche youtube")
-    .addField("%serverinfo", "donne des informations sur ce serveur")
+    .addField("%server-info", "donne des informations sur ce serveur")
     .addField("%lettres-caches", "cache un texte et le fait dire par le bot")
     .setFooter("%help")
 
