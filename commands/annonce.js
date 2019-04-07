@@ -17,8 +17,8 @@ module.exports.run = (bot, message, args) => {
             .setTitle("📌 __Annonce :__")
             .setDescription(contenu)
             .setColor("#008000")
-        message.channel.send(annonce)
-        message.channel.send("@everyone")
+        salonAnnonce.send(annonce)
+        salonAnnonce.send("@everyone")
         message.delete();
     }
 }

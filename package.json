@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "engines": { "node": "10.15.0"},
+  "engines": {
+    "node": "10.15.0"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js"
@@ -12,6 +14,7 @@
   "license": "ISC",
   "dependencies": {
     "discord.js": "^11.4.2",
-    "enmap": "^4.8.1"
+    "enmap": "^4.8.1",
+    "ms": "^2.1.1"
   }
 }
