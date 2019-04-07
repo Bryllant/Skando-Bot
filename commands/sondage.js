@@ -6,7 +6,7 @@ module.exports.run = (bot, message, args) => {
         message.channel.send(error_permissions)
     }
 
-    salon = bot.guilds.get("469111638835068928").channels.find(`name`, "『📝』informations-serveur");
+    salon = bot.guilds.get("511137142991355914").channels.find(`name`, "『📝』informations-serveur");
     if(message.member.hasPermission("MANAGE_MESSAGES")) {
         let arg = message.content.split(" ").slice(1);
         let thingToEcho = arg.join(" ")
