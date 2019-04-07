@@ -8,7 +8,7 @@ module.exports.run = (bot, message, args) => {
         message.channel.send(error_permissions)
     }
 
-    salonAnnonce = guild.channel.find("『📝』informations-serveur")
+    salonAnnonce = bot.guilds.get("469111638835068928").channels.find(`name`, "『📝』informations-serveur");
     if (message.member.hasPermission("ADMINISTRATOR")) {
         let arg = message.content.split(" ").slice(1);
         let contenu = arg.join(" ");

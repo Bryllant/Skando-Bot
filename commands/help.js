@@ -53,6 +53,9 @@ module.exports.run = async (bot, message) => {
     .addField("%pub", "Dire que la pub est interdite")
     .addField("%game", "Permet de dire que ce n'est pas le salona apropprié pour une demande de game")
     .addField("%maj", "Commence la mise a jour du serveur")
+    .addField("%mp", "Envoie un mp avec le bot a un membre du serveur")
+    .addField("%annonce", "Envoie une annonce dans le salon inormation")
+    .addField("%sondage", "Permet de créer un sondage")
 
 
 
