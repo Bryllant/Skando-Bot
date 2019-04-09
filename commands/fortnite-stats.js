@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 const Client = require("fortnite");
-const fkey = require(process.env.CLE);
+const fkey = process.env.CLE;
 const fortnite = new Client(fkey.token)
 module.exports.run = async (bot, message, args) => {
   await message.delete();
