@@ -21,7 +21,7 @@ module.exports.run = async (bot, message, args) => {
         let winper = lifetime[9] ['% de top 1'];
         let kills = lifetime[10] ['Kills'];
         let kd = lifetime[11] ['K/D'];
-
+/*
         let embed = new Discord.RichEmbed()
         .setTitle("Stats fortnite")
         .setAuthor(data.username)
@@ -32,7 +32,18 @@ module.exports.run = async (bot, message, args) => {
         .addField("Nb de partie", mplayed, true)
         .addField("% de top 1", winper, true)
         .addField("k/d", kd, true)
-
+*/
+let embed = new Discord.RichEmbed()
+        .setTitle(username)
+        .setColor("#008000")
+        .setDescription("Stats fortnite")
+        .setThumbnail(bot.user.displayAvatarURL)
+        .addField("Top 3", data.stats.lifetime[1]["Top 3s"], true)
+        .addField("Top 5", data.stats.lifetime[0]["Top 5s"], true)
+        .addField("Top 1", data.stats.lifetime[8]["Wins"], true)
+        .addField("Victoire/Défaite", data.stats.lifetime[9]["Win%"], true)
+        .addField("Kill", data.stats.lifetime[10]["Kills"], true)
+        .addField("K/D", data.stats.lifetime[11]["K/d"], true);
         message.channel.send(embed)
     });
 //AVEC UN COLLECTEUR
