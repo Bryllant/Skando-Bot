@@ -4,13 +4,14 @@ const fkey = process.env.CLE;
 const fortnite = new Client(fkey.token)
 module.exports.run = async (bot, message, args) => {
   await message.delete();
+  if(message.author.id != "468342061230456833")
     let username = args[0];
     let plateform = args[1] || 'pc';
 
     if(!username) return message.reply ("Veuillez entrer un pseudo")
 
     let data = fortnite.user(username, plateform).then(data => {
-        //console.log(data);
+        console.log(data);
         let stats = data.stats;
         let lifetime = stats.lifetime;
 
@@ -34,27 +35,7 @@ module.exports.run = async (bot, message, args) => {
 
         message.channel.send(embed)
     });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//AVEC UN COLLECTEUR
  /*
   const filter = m => m.author.id === message.author.id;
   message.reply("Choissisez un utilisateur... La commande expire dans 10 secondes...").then(q => q.delete(15000))
