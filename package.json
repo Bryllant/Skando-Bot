@@ -15,6 +15,7 @@
   "dependencies": {
     "discord.js": "^11.4.2",
     "enmap": "^4.8.1",
+    "fortnite": "^4.3.2",
     "ms": "^2.1.1"
   }
 }

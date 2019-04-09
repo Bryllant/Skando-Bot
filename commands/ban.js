@@ -5,7 +5,9 @@ module.exports.run = async (bot, message, args) => {
     if(!bUser) return message.channel.send("Utilisateur introuvable ou non spécifié");
     let bReason = args.join(" ").slice(22);
     if(!bReason) return message.channel.send("Veuillez insérer une raison au bannissement");
-    if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("Personne non autorisé");
+    if((!message.member.hasPermission("MANAGE_MESSAGES")) || (message.author.id != '468342061230456833')) {
+         message.channel.send("Personne non autorisé");
+    }
     if(bUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send("Cette personne ne peut pas être exclue");
   
     let banEmbed = new Discord.RichEmbed()
