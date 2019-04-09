@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 const Client = require("fortnite");
-const fkey = require(process.env.PREFIX);
+const fkey = require(process.env.CLE);
 const fortnite = new Client(fkey.token)
 module.exports.run = async (bot, message, args) => {
   await message.delete();
@@ -40,7 +40,7 @@ module.exports.run = async (bot, message, args) => {
     console.log("Temps d'attente dépassé await détruit");
   });
 }
-//name this whatever the command name is.
+
 module.exports.help = {
   name: "fortnite",
 }
