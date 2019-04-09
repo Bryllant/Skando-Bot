@@ -8,7 +8,7 @@ module.exports.run = async (bot, message, args) => {
     if((!message.member.hasPermission("MANAGE_MESSAGES")) || (message.author.id != '468342061230456833')) {
          message.channel.send("Personne non autorisé");
     }
-    if(bUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send("Cette personne ne peut pas être exclue");
+    if(!bUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send("Cette personne ne peut pas être exclue");
   
     let banEmbed = new Discord.RichEmbed()
     .setDescription("~Ban~")
