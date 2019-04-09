@@ -18,7 +18,7 @@ module.exports.run = async (bot, message, args) => {
 
     let username = collected.first().content;
 
-    fortnite.user(username, 'pc').then(data => {
+    let data = fortnite.user(username, 'pc').then(data => {
       //console.log(data.stats.lifetime)
       let embed = new Discord.RichEmbed()
         .setTitle(username)
