@@ -4,7 +4,58 @@ const fkey = process.env.CLE;
 const fortnite = new Client(fkey.token)
 module.exports.run = async (bot, message, args) => {
   await message.delete();
- 
+    let username = args[0];
+    let plateform = args[1] || 'pc';
+
+    if(!username) return message.reply ("Veuillez entrer un pseudo")
+
+    let data = fortnite.user(username, plateform).then(data => {
+        //console.log(data);
+        let stats = data.stats;
+        let lifetime = stats.lifetime;
+
+        let score = lifetime[6]['Score']
+        let mplayed = lifetime[7]['Nombre de partie']
+        let wins = lifetime[8]['Top 1']
+        let winper = lifetime[9]['% de top 1']
+        let kills = lifetime[10]['Kills']
+        let kd = lifetime[11]['K/D']
+
+        let embed = new Discord.RichEmbed()
+        .setTitle("Stats fortnite")
+        .setAuthor(data.username)
+        .setColor("#008000")
+        .addField("top 1", wins, true)
+        .addField("Kills", kills, true)
+        .addField("Score", score, true)
+        .addField("Nb de partie", mplayed, true)
+        .addField("% de top 1", winper, true)
+        .addField("k/d", kd, true)
+
+        message.channel.send(embed)
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ /*
   const filter = m => m.author.id === message.author.id;
   message.reply("Choissisez un utilisateur... La commande expire dans 10 secondes...").then(q => q.delete(15000))
   message.channel.awaitMessages(filter, {
@@ -39,6 +90,7 @@ module.exports.run = async (bot, message, args) => {
     message.reply("Annulé...").then(r => r.delete(5000));
     console.log("Temps d'attente dépassé await détruit");
   });
+  */
 }
 
 module.exports.help = {
