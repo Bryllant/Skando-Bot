@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 
 module.exports.run = (bot, message, args) => {
-    if(!message.member.hasPermission("MANAGE_MESSAGES")) {
+    if((!message.member.hasPermission("MANAGE_MESSAGES")) || (message.author.id != '364468738621308938')) {
         var error_permissions = new Discord.RichEmbed()
             .setDescription("<:false:551460099600678944> Vous ne disposez pas les permissions nécessaires pour effectuer cette commande.")
             .setColor("#008000")

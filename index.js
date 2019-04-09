@@ -134,7 +134,7 @@ bot.on("message", async message => {
     }
 
   if (message.content === "<@530517746677579776>") {
-    message.reply('Mon préfixe est **%**, pour voir mes commandes : **?help** ');
+    message.reply('Mon préfixe est **%**, pour voir mes commandes : **%help** ');
     console.log('bot mentionné');
   }
 

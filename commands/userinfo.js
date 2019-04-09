@@ -16,7 +16,7 @@ module.exports.run = async (bot, message) => {
     .addField("Jeu", gameName, true)
     .addField("Quand à t'il join ?", usera.joinedAt, true)
     .setTimestamp()
-    .setColor(0x0f7fa6)
+    .setColor("#0x0f7fa6")
     .addField("Date d'arrivée sur le serveur", `${jour}.${mois}.${année}`)
     .setThumbnail(usera.user.avatarURL);
     message.channel.send({embed});
