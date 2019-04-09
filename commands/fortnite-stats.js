@@ -4,7 +4,7 @@ const fkey = process.env.CLE;
 const fortnite = new Client(fkey.token)
 module.exports.run = async (bot, message, args) => {
   await message.delete();
-  if(message.author.id != "468342061230456833")
+  if(message.author.id != "468342061230456833") return;
     let username = args[0];
     let plateform = args[1] || 'pc';
 
