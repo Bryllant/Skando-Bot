@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 const Client = require("fortnite");
 const fkey = process.env.CLE;
-const fortnite = new Client(fkey.token)
+const fortnite = new Client(fkey)
 module.exports.run = async (bot, message, args) => {
   await message.delete();
   if(message.author.id != "468342061230456833") return;
