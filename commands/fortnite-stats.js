@@ -15,12 +15,12 @@ module.exports.run = async (bot, message, args) => {
         let stats = data.stats;
         let lifetime = stats.lifetime;
 
-        let score = lifetime[6] ['Score'];
-        let mplayed = lifetime[7] ['Nombre de partie'];
-        let wins = lifetime[8] ['Top 1'];
-        let winper = lifetime[9] ['% de top 1'];
-        let kills = lifetime[10] ['Kills'];
-        let kd = lifetime[11] ['K/D'];
+        let score = lifetime[6] ['score'];
+        let mplayed = lifetime[7] ['matches'];
+        let wins = lifetime[8] ['wins'];
+        //let winper = lifetime[9] ['% de top 1'];
+        let kills = lifetime[10] ['kills'];
+        let kd = lifetime[11] ['kd'];
 
         let embed = new Discord.RichEmbed()
         .setTitle("Stats fortnite")
@@ -30,7 +30,7 @@ module.exports.run = async (bot, message, args) => {
         .addField("Kills", kills, true)
         .addField("Score", score, true)
         .addField("Nb de partie", mplayed, true)
-        .addField("% de top 1", winper, true)
+        //.addField("% de top 1", winper, true)
         .addField("k/d", kd, true)
         message.channel.send(embed)
 /*
@@ -87,6 +87,7 @@ let embed = new Discord.RichEmbed()
   */
 });
 }
+
 
 module.exports.help = {
   name: "fortnite"
