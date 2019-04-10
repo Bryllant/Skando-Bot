@@ -142,7 +142,7 @@ bot.on("message", async message => {
   if (message.content === "tournage") {
     var args = message.content.slice(" ")
     message.delete()
-    message.reply("Ici personne en conaît les dates pour le tournage mais si tu veux tout savoir Skand fera un everyone dans ce salon (on sais pas quand) et les premiers a répondre seront séléctionné donc soyez présent!")
+    message.channel.send("Ici personne ne conaît les dates pour le tournage mais si tu veux tout savoir Skand fera un everyone dans ce salon (on sais pas quand) et les premiers a répondre seront séléctionnés donc soyez présent!")
   }
 
 
