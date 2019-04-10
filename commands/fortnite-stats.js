@@ -15,12 +15,12 @@ module.exports.run = async (bot, message, args) => {
         let stats = data.stats;
         let lifetime = stats.lifetime;
 
-        let score = lifetime[6] ['score'];
-        let mplayed = lifetime[7] ['matches'];
-        let wins = lifetime[8] ['wins'];
+        let score = lifetime[5] ['score'];
+        let mplayed = lifetime[6] ['matches'];
+        let wins = lifetime[7] ['wins'];
         //let winper = lifetime[9] ['% de top 1'];
-        let kills = lifetime[10] ['kills'];
-        let kd = lifetime[11] ['kd'];
+        let kills = lifetime[9] ['kills'];
+        let kd = lifetime[10] ['kd'];
 
         let embed = new Discord.RichEmbed()
         .setTitle("Stats fortnite")
