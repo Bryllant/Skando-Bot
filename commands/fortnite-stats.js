@@ -21,7 +21,7 @@ module.exports.run = async (bot, message, args) => {
         let winper = lifetime[9] ['% de top 1'];
         let kills = lifetime[10] ['Kills'];
         let kd = lifetime[11] ['K/D'];
-/*
+
         let embed = new Discord.RichEmbed()
         .setTitle("Stats fortnite")
         .setAuthor(data.username)
@@ -32,7 +32,8 @@ module.exports.run = async (bot, message, args) => {
         .addField("Nb de partie", mplayed, true)
         .addField("% de top 1", winper, true)
         .addField("k/d", kd, true)
-*/
+        message.channel.send(embed)
+/*
 let embed = new Discord.RichEmbed()
         .setTitle(username)
         .setColor("#008000")
@@ -46,6 +47,7 @@ let embed = new Discord.RichEmbed()
         .addField("K/D", data.stats.lifetime[11]["K/d"], true);
         message.channel.send(embed)
     });
+    */
 //AVEC UN COLLECTEUR
  /*
   const filter = m => m.author.id === message.author.id;
@@ -83,8 +85,9 @@ let embed = new Discord.RichEmbed()
     console.log("Temps d'attente dépassé await détruit");
   });
   */
+});
 }
 
 module.exports.help = {
-  name: "fortnite",
+  name: "fortnite"
 }
