@@ -138,6 +138,14 @@ bot.on("message", async message => {
     console.log('bot mentionné');
   }
 
+  if (message.content === "tournage") {
+    message.delete()
+    message.reply("Ici personne en conaît les dates pour le tournage mais si tu veux tout savoir Skand fera un everyone dans ce salon (on sais pas quand) et les premiers a répondre seront séléctionné donc soyez présent!")
+  }
+
+
+
+
   if (message.channel === "471036082222530571") {
     message.channel.send("@Fortnite News (ancien/family) @Fortnite News")
   }
