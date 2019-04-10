@@ -129,17 +129,17 @@ bot.on("message", async message => {
     message.delete()
   }
 
-    if ((message.content === " <@403643401137815562> ") && (!message.member.hasPermission('MANAGE_MESSAGES'))) {
+    if ((message.content === "<@403643401137815562>") && (!message.member.hasPermission('MANAGE_MESSAGES'))) {
     var args = message.content.slice(" ")
       message.delete()
     }
-
+//les = args[0] amis = args[1] pour suppr une phrase
   if (message.content === "<@530517746677579776>") {
     message.reply('Mon préfixe est **%**, pour voir mes commandes : **%help** ');
     console.log('bot mentionné');
   }
 
-  if (message.content === " tournage ") {
+  if (message.content === "tournage") {
     var args = message.content.slice(" ")
     message.delete()
     message.reply("Ici personne en conaît les dates pour le tournage mais si tu veux tout savoir Skand fera un everyone dans ce salon (on sais pas quand) et les premiers a répondre seront séléctionné donc soyez présent!")
