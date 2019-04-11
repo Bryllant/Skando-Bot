@@ -213,7 +213,7 @@ else {
 
 bot.on('guildMemberAdd', member => {
   const aurevoir = member.guild.channels.find('name', '『🎉』bienvenue')
-  member.send("Bienvenue")
+  member.send("Passe du bon temps sur Skando'Team !  Tu dois aussi consulter les règles du serveur elles sont importantes pour que ce serveur Discord soit agréable !")
   let embed = new Discord.RichEmbed()
       .setDescription(member.user.username + ' a rejoint le serveur')
       .setFooter('Nous sommes désormais ' + member.guild.memberCount)
@@ -223,6 +223,7 @@ bot.on('guildMemberAdd', member => {
 
 bot.on('guildMemberRemove', member => {
   const aurevoir = member.guild.channels.find('name', '『🎉』bienvenue')
+  member.send("Pas cool d'être partit on est gentil")
   let embed = new Discord.RichEmbed()
       .setDescription(member.user.username + ' a quitté le serveur')
       .setFooter('Nous sommes désormais ' + member.guild.memberCount)
