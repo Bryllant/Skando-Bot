@@ -12,7 +12,7 @@ module.exports.run = async(bot, message, channel, guild, cmd) => {
     
     await message.guild.createChannel("『🔒』modos", 'text').then(channel => channel.setParent(setup))
     
-    await message.guild.createChannel("#『📊』sondages", "text").then(channel => channel.setParent(setup))
+    await message.guild.createChannel("『📊』sondages", "text").then(channel => channel.setParent(setup))
     };
     
 
