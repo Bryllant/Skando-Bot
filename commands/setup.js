@@ -1,7 +1,7 @@
 const Discord = require('discord.js')
 
 module.exports.run = async(bot, message, channel, guild, cmd) => {
- 
+    if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("Personne non autorisé"); 
     await message.guild.createChannel('Skando-Bot', 'category')
      let setup = bot.channels.find(c => c.name === "Skando-Bot")
     
