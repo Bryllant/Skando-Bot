@@ -7,7 +7,8 @@ module.exports.run = (bot, message, args) => {
     }
 
     salon = bot.guilds.get("511137142991355914").channels.find(`name`, "『📝』informations-serveur");
-    if(message.member.hasPermission("MANAGE_MESSAGES")) {
+    message.delete()
+    if(!message.member.hasPermission("MANAGE_MESSAGES")) return;
         let arg = message.content.split(" ").slice(1);
         let thingToEcho = arg.join(" ")
         if (!args[0]) return message.channel.send("❌ Votre syntaxe est incorrecte. \n```Syntaxe : %sondage <Question>```");
@@ -21,9 +22,7 @@ module.exports.run = (bot, message, args) => {
             message.react("❌")
         }).catch(function(){
 
-        });
-        message.delete()
-    }
+        }); 
 }
 
 module.exports.help = {
