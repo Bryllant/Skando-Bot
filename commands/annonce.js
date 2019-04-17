@@ -1,14 +1,14 @@
 const Discord = require('discord.js');
 
 module.exports.run = (bot, message, args) => {
-    if((!message.member.hasPermission("MANAGE_MESSAGES")) || (message.author.id != '364468738621308938')) {
+    if(!message.member.hasPermission("MANAGE_MESSAGES")) {
         var error_permissions = new Discord.RichEmbed()
             .setDescription("<:false:551460099600678944> Vous ne disposez pas les permissions nécessaires pour effectuer cette commande.")
             .setColor("#008000")
         message.channel.send(error_permissions)
     }
 
-    salonAnnonce = bot.guilds.get("469111638835068928").channels.find(`name`, "『📝』informations-serveur");
+    let salonAnnonce = message.guild.channels.find(`name`, "『📝』informations-serveur");
     if (message.member.hasPermission("MANAGE_MESSAGES")) {
         let arg = message.content.split(" ").slice(1);
         let contenu = arg.join(" ");
