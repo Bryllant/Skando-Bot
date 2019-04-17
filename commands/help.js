@@ -56,6 +56,7 @@ module.exports.run = async (bot, message) => {
     .addField("%mp", "Envoie un mp avec le bot a un membre du serveur")
     .addField("%annonce", "Envoie une annonce dans le salon inormation")
     .addField("%sondage", "Permet de créer un sondage")
+    .addField("%setup", "Va setup les channels pour que tout les salons puissent marcher correctemment")
 
 
 

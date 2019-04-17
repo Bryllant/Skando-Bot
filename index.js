@@ -154,7 +154,7 @@ bot.on("message", async message => {
   if (message.channel === "471036082222530571") {
     message.channel.send("@Fortnite News (ancien/family) @Fortnite News")
   }
-/*
+
   if (message.author.bot) return;
   if (message.channel.type === "dm") {
     var args = message.content.split(" ").slice(0);
@@ -182,7 +182,7 @@ else {
       );
     bot.guilds
       .get("469111638835068928")
-      .channels.get("469118311175815168")
+      .channels.get("568201680454418473")
       .send(embed);
   }
 
@@ -210,7 +210,7 @@ else {
     bot.users.get(userID).send(embed);
     message.channel.send("Repondu avec succes !").catch(console.error);
   }
-  */
+  
 });
 
 bot.on('guildMemberAdd', member => {
