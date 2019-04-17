@@ -1,8 +1,7 @@
 const Discord = require('discord.js')
 
 module.exports.run = async(bot, message, channel, guild, cmd) => {
-    if (message.guild.channels.find('name', 'mod-log', "tchat", "ticket-support", "reports", "reboot-bot", "dm-support", "acceuil", "aurevoir" )) return
-    
+ 
     await message.guild.createChannel('Skando-Bot', 'category')
      let setup = bot.channels.find(c => c.name === "Skando-Bot")
     
