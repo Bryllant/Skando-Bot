@@ -2,8 +2,8 @@
 
 const request = require("request");
 
-module.exports.run = (__bot, message) => {
-    request("https://aws.random.cat/meow", (error, res, body) => {
+module.exports.run = (__client, message) => {
+    request("https://dog.ceo/api/breeds/image/random", (error, res, body) => {
         if (error) { return message.channel.send("Erreur d'API"); }
         if (res.statusCode !== 200) { 
           return message.channel.send(`Erreur: ${res.statusCode}`); 
@@ -11,12 +11,12 @@ module.exports.run = (__bot, message) => {
         var body = JSON.parse(body);
         message.channel.send({
             embed: {
-                color: 0xff9900,
-                image: { url: body.file }
+                color: 0xd6ff00,
+                image: { url: body.message }
             }
         })
     });
 }
-module.exports.help = {
-     name: "cat" 
-    }
+module.exports.help = { 
+    name: "dog" 
+}

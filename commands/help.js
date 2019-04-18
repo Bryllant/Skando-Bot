@@ -18,6 +18,8 @@ module.exports.run = async (bot, message) => {
     .addField("%youtube", "lance une recherche youtube")
     .addField("%server-info", "donne des informations sur ce serveur")
     .addField("%user-info", "Donne des informations sur vous")
+    .addField("%dog", "Affiche une image de chien")
+    .addField("%cat", "Affiche une image de chat")
     .setFooter("%help")
 
     var helpModo = new Discord.RichEmbed()
