@@ -1,4 +1,4 @@
-module.exports.run = async (bot, message) => {
+module.exports.run = async (bot, message, member) => {
   await message.guild.createChannel('Stats du serveur', 'category')
      let setup = bot.channels.find(c => c.name === "Stats du serveur")
     
