@@ -24,7 +24,7 @@ jsfile.forEach((f, i) =>{
 });
 
 
-bot.on("ready", () => {
+bot.on("ready", (member, users, guild, message) => {
   console.log(bot.user.username + " est en ligne")
 
   //crash
@@ -33,11 +33,16 @@ bot.on("ready", () => {
 
   //stats
 
+  bot.channels.find(c => c.id === "569197036314951697").setName("『🧔』Utilisateurs : " + guild.memberCount) //user
+  bot.channels.find(c => c.id === "569197977961365634").setName("『🧮』Connectés : " + guild.members.filter(member => member.presence.status != "offline").size, true) //connectés
+  bot.channels.find(c => c.id === "569197912685412372").setName("『🧾』Bot : " + guild.members.filter(member => member.user.bot === true).size, true) //channel
+  bot.channels.find(c => c.id === "569198016867729435").setName("『🔑』Channel : " + guild.channelCount) //bot
+/*
   bot.channels.find(c => c.id === "569197036314951697").setName("『🧔』Utilisateurs : " + bot.users.size) //user
   bot.channels.find(c => c.id === "569197977961365634").setName("『🧮』Connectés : " + bot.guilds.size) //connectés
   bot.channels.find(c => c.id === "569197912685412372").setName("『🧾』Bot : " + bot.channels.size) //channel
   bot.channels.find(c => c.id === "569198016867729435").setName("『🔑』Channel : " + "8") //bot
-  /*
+  
   if (!guild.channels.find('name', "Membres", "Bots", "Connectés", "Channels")) return;
 bot.channels.find(`name`, "Membres").setName("Membres: " + member.guild.memberCount)
 bot.channels.find(`name`, "Bots").setName("Bots: " + message.guild.members.filter(member => member.user.bot === true).size, true)
