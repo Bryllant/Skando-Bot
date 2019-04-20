@@ -32,6 +32,7 @@ bot.on("ready", () => {
   crash.send(":gear: Je viens de crash mais me re-voila")
 
   //stats
+  if (!guild.channels.find('name', "Membres", "Bots", "Connectés", "Channels")) return;
 bot.channels.find(`name`, "Membres").setName("Membres: " + member.guild.memberCount)
 bot.channels.find(`name`, "Bots").setName("Bots: " + message.guild.members.filter(member => member.user.bot === true).size, true)
 bot.channels.find(`name`, "Connectés").setName("Connectés: " + message.guild.members.filter(member => member.presence.status != "offline").size, true)
