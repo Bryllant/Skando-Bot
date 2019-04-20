@@ -32,12 +32,18 @@ bot.on("ready", () => {
   crash.send(":gear: Je viens de crash mais me re-voila")
 
   //stats
+  /*
   if (!guild.channels.find('name', "Membres", "Bots", "Connectés", "Channels")) return;
 bot.channels.find(`name`, "Membres").setName("Membres: " + member.guild.memberCount)
 bot.channels.find(`name`, "Bots").setName("Bots: " + message.guild.members.filter(member => member.user.bot === true).size, true)
 bot.channels.find(`name`, "Connectés").setName("Connectés: " + message.guild.members.filter(member => member.presence.status != "offline").size, true)
 bot.channels.find(`name`, "Channels").setName("Channels: " + member.guild.channelCount)
 
+bot.channels.find(c => c.id === "566168022147137538").setName("『🧔』Utilisateurs : " + bot.users.size)
+bot.channels.find(c => c.id === "566168075167072257").setName("『🧮』Guildes : " + bot.guilds.size)
+bot.channels.find(c => c.id === "566168123166818315").setName("『🧾』Channels : " + bot.channels.size)
+bot.channels.find(c => c.id === "566168577221066753").setName("『🔑』Version : " + config.version)
+*/
 });
 
 bot.on("message", async message => {
