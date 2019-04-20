@@ -32,6 +32,9 @@ bot.on("ready", () => {
   crash.send(":gear: Je viens de crash mais me re-voila")
 
   //stats
+
+  bot.channels.find(c => c.id === "569197036314951697").setName("『🧔』Utilisateurs : " + guilds.users.size)
+
   /*
   if (!guild.channels.find('name', "Membres", "Bots", "Connectés", "Channels")) return;
 bot.channels.find(`name`, "Membres").setName("Membres: " + member.guild.memberCount)
