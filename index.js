@@ -31,6 +31,12 @@ bot.on("ready", () => {
   crash = bot.guilds.get("469111638835068928").channels.find(`name`, "beta-du-bot");
   crash.send(":gear: Je viens de crash mais me re-voila")
 
+  //stats
+bot.channels.find(`name`, "Membres").setName("Membres: " + member.guild.memberCount)
+bot.channels.find(`name`, "Bots").setName("Bots: " + message.guild.members.filter(member => member.user.bot === true).size, true)
+bot.channels.find(`name`, "Connectés").setName("Connectés: " + message.guild.members.filter(member => member.presence.status != "offline").size, true)
+bot.channels.find(`name`, "Channels").setName("Channels: " + member.guild.channelCount)
+
 });
 
 bot.on("message", async message => {
