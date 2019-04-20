@@ -233,3 +233,4 @@ bot.on('guildMemberRemove', member => {
       aurevoir.send(embed)
 });
 
+
