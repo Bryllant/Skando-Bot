@@ -7,6 +7,7 @@ module.exports.run = async (bot, message) => {
     .setColor("#15f153")
     .setThumbnail(bicon)
     .addField("Bot", bot.user.username)
+    .addField("Créateur", "Crée par Bryllant la Mouette")
     .addField("Crée le ", bot.user.createdAt)
     .addField("Nombre de serveur:", bot.guilds.size)
     .addField("Nombre de membres", bot.users.size)
