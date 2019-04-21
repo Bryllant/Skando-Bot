@@ -1,8 +1,7 @@
 const weather = require("weather-js")
 
 module.exports.run = async (bot, message) => {
-    let cont = message.content.slice(1).split(" ")
-    let args = cont.slice[1];
+    let args = message.content.split(' ').slice(1).join(' ');
     weather.find({search: args.join(' '), degreeType: 'C'}, function(err, result) {
         if(err) console.log(err);
 
