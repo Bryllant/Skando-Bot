@@ -4,10 +4,10 @@ module.exports.run = async (bot, message) => {
     let limit = message.content.split(" ")[1];
 
     if(!limit || isNaN(limit)) {
-      return message.channel.send("⚠ Ce n'est pas une limite valide, veuillez taper un nombre !");
+      return message.channel.send("❌ Votre syntaxe est incorrecte. \n```Syntaxe : %bingo <limite>```");
     }
         
-    message.channel.send(`Que le bingo commence ! Vous avez **1** minutes pour trouver un nombre compris entre **0** et **${limit}**`)
+    message.channel.send(`Que le bingo commence ! Vous avez **1** minutes pour trouver un nombre compris entre **0** et **${limit}** \n Vous pouvez annuler le bingo en écrivant annuler`)
         .then(async(m) => {
             const random = Math.floor(Math.random() * limit);
             const filter = m => m.author.id !== bot.user.id;
@@ -22,7 +22,7 @@ module.exports.run = async (bot, message) => {
                     response = parseInt(response);
     
                     if(isNaN(response)) {
-                        return message.channel.send("⚠ Ce n'est pas un nombre !");
+                        return message.channel.send("❌ Ce n'est pas un nombre !");
                     }
                     else if(response === random) {
                         await collector.stop(`${collected.author.toString()} a remporté le Bingo, le nombre était: **${random}**`);
