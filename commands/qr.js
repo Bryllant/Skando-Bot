@@ -7,6 +7,7 @@ module.exports.run = async (bot, message, args) => {
     if (args.length > 0) {
         qrcode.toFile(qrOutput, args.join(" "), { margin: 1 }, (error) => {
             if (error) throw new Error(error);
+            if (!args) return;
             message.channel.stopTyping();
             message.channel.send(`**Voici votre QR Code de ${args}**`)
             message.channel.send({
