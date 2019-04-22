@@ -11,15 +11,15 @@ module.exports.run = async (bot, message, args) => {
 
     fortnite.user(username, plateform).then(data => {
         console.log(data);
-        var stats = data.stats.lifetime
+        var stats = data.stats.lifetime;
 
 
-        let score = "";
-        let matchedplayed = "";
+        var score = "";
+        var matchedplayed = "";
         //let wins = "";
         //let winper = lifetime[9];
-        let kills = "";
-        let kd = "";
+        var kills = "";
+        var kd = "";
 
         stats.find(s => kills = s.Kills);
         stats.find(s => score = s.Score);
