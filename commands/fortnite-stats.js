@@ -8,19 +8,19 @@ module.exports.run = async (bot, message, args) => {
     let username = args[0];
     let plateform = args[1] || 'pc';
 
-    if(!username) return message.reply ("Veuillez entrer un pseudo")
+    if(!username) return message.reply ("Veuillez entrer un pseudo");
 
     let data = fortnite.user(username, plateform).then(data => {
         console.log(data);
         let stats = data.stats;
         let lifetime = stats.lifetime;
 
-        let score = lifetime[5] ['score'];
-        let mplayed = lifetime[6] ['matches'];
-        let wins = lifetime[7] ['wins'];
-        //let winper = lifetime[9] ['% de top 1'];
-        let kills = lifetime[9] ['kills'];
-        let kd = lifetime[10] ['kd'];
+        let score = lifetime[5];
+        let mplayed = lifetime[6];
+        let wins = lifetime[7];
+        let winper = lifetime[9];
+        let kills = lifetime[9];
+        let kd = lifetime[10];
 
         let embed = new Discord.RichEmbed()
         .setTitle("Stats fortnite")
