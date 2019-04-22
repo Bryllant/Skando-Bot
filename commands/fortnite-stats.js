@@ -11,10 +11,6 @@ module.exports.run = async (bot, message, args) => {
 
     fortnite.user(username, plateform).then(data => {
         console.log(data);
-    }).catch(err => {
-      console.log(err)
-      message.channel.send("Une erreur est survenue");
-    })
         var stats = data.stats.lifetime
 
 
@@ -42,6 +38,11 @@ module.exports.run = async (bot, message, args) => {
         //.addField("% de top 1", winper, true)
         .addField("k/d", kd, true)
         message.channel.send(embed)
+    }).catch(err => {
+      console.log(err)
+      message.channel.send("Une erreur est survenue");
+    })
+        
 }
 
 
