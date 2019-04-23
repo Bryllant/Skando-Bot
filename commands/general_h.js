@@ -5,7 +5,7 @@ module.exports.run = async (bot, message) => {
     let pub = new Discord.RichEmbed()
     .setTimestamp()
     .setColor("RANDOM")
-    .setFooter("pub")
+    .setFooter("general")
     .setTitle("Tu parles dans le mauvais salon")
     .setDescription("Pour les discussions sans thème précis il faut aller dans #『👍』général-abonnés")
     message.channel.send(pub)

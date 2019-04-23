@@ -222,7 +222,23 @@ else {
     bot.users.get(userID).send(embed);
     message.channel.send("Repondu avec succes !").catch(console.error);
   }
-  
+
+
+
+  var banni = [
+    "connard",
+    "pute",
+    "putain",
+    "tg",
+    "nique",
+    "con",
+    "conne",
+    "salope",
+    "merde",
+ ];
+   if (banni.some(x => msg.content.toLowerCase().split(/\s+/).includes(x))) {
+     return msg.channel.send("Attention à ton langage !"); 
+   } 
 });
 
 bot.on('guildMemberAdd', member => {
