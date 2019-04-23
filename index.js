@@ -236,7 +236,7 @@ else {
     "salope",
     "merde",
  ];
-   if (banni.some(x => msg.content.toLowerCase().split(/\s+/).includes(x))) {
+   if (banni.some(x => message.content.toLowerCase().split(/\s+/).includes(x))) {
      return message.channel.send("Attention à ton langage !"); 
    } 
 });
