@@ -1,5 +1,4 @@
 const Discord = require("discord.js");
-const config = require("../configs.json");
 
 function convertMS(ms) {
     var d, h, m, s;
