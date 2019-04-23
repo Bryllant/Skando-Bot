@@ -23,13 +23,13 @@ module.exports.run = async (bot, message, args) => {
         const u = convertMS(bot.uptime);
         const uptime =
             u.d +
-            " days : " +
+            " jours : " +
             u.h +
-            " hours : " +
+            " heures : " +
             u.m +
             " minutes : " +
             u.s +
-            " seconds";
+            " secondes";
         const bicon = bot.user.displayAvatarURL;
         const botembed = new Discord.RichEmbed()
             .setColor("RANDOM")
