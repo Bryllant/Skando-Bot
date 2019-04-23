@@ -238,7 +238,7 @@ else {
  ];
    if (banni.some(x => message.content.toLowerCase().split(/\s+/).includes(x))) {
     message.delete()
-    message.channel.send("Attention à ton langage !"); 
+    message.reply("Attention à ton langage !"); 
    } 
 });
 
