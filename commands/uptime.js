@@ -36,7 +36,7 @@ module.exports.run = async (bot, message, args) => {
             .setColor("RANDOM")
             .addField(":gear: ", `Dernière mise a jour  : ${uptime}`)
             .setThumbnail(bicon)
-            .setFooter(message.author.tag + " | Version " + config.version);
+            .setFooter(message.author.tag);
         message.channel.send(botembed);
 };
 
