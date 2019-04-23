@@ -237,7 +237,7 @@ else {
     "merde",
  ];
    if (banni.some(x => msg.content.toLowerCase().split(/\s+/).includes(x))) {
-     return msg.channel.send("Attention à ton langage !"); 
+     return message.channel.send("Attention à ton langage !"); 
    } 
 });
 
