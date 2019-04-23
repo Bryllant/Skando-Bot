@@ -32,9 +32,9 @@ module.exports.run = async (bot, message, args) => {
             " seconds";
         const bicon = bot.user.displayAvatarURL;
         const botembed = new Discord.RichEmbed()
-            .addBlankField()
             .setColor("RANDOM")
             .addField(":gear: ", `Dernière mise a jour  : ${uptime}`)
+            .addField("Version", "Version beta")
             .setThumbnail(bicon)
             .setFooter(message.author.tag);
         message.channel.send(botembed);
