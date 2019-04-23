@@ -40,7 +40,7 @@ module.exports.run = async (bot, message, args) => {
         message.channel.send(embed)
     }).catch(err => {
       console.log(err)
-      message.channel.send(err);
+      message.channel.send("erreur");
     })
         
 }
