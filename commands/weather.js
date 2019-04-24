@@ -22,6 +22,9 @@ module.exports.run = async (bot, message, args) => {
         .addField("Vent", current.winddisplay, true)
         .addField("Humidité", `${current.humidity} %`, true)
         .addField("Fuseau", `UTC ${location.timezone}`, true)
+
+
+        message.channel.send(embed)
 });
 }
 module.exports.help = {
