@@ -232,7 +232,7 @@ bot.on("message", async message => {
     "pute",
   ];
   
-  if(!message.author.hasPermission("MANAGE_MESSAGES")) {
+  if (!message.member.hasPermission("ADMINISTRATOR")) {
   if (banni.some(x => message.content.toLowerCase().split(/\s+/).includes(x))) {
     message.delete()
     message.reply("Attention à ton langage !");
