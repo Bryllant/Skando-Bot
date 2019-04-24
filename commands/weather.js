@@ -12,7 +12,7 @@ module.exports.run = async (bot, message, args) => {
         var current = result[0].current;
         var location = result[0].location;
 
-        const embed = new Discord.RichEmbed()
+        const ville = new Discord.RichEmbed()
         .setDescription(`**${current.skytext}**`)
         .setAuthor(`Ville de ${current.observationpoint}`)
         .setThubnail(current.imageURL)
@@ -24,7 +24,7 @@ module.exports.run = async (bot, message, args) => {
         .addField("Fuseau", `UTC ${location.timezone}`, true)
 
 
-        message.channel.send(embed)
+        message.channel.send(ville)
 });
 }
 module.exports.help = {
