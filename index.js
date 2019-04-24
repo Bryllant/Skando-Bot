@@ -153,13 +153,6 @@ bot.on("message", async message => {
     console.log('bot mentionné');
   }
 
-  if (message.content === "tournage") {
-    var args = message.content.slice(" ")
-    message.delete()
-    message.channel.send("Ici personne ne conaît les dates pour le tournage mais si tu veux tout savoir Skand fera un everyone dans ce salon (on sais pas quand) et les premiers a répondre seront séléctionnés donc soyez présent!")
-  }
-
-
   //salut les amis comment ca va
   //les = args[0] amis = args[1]
 
@@ -234,11 +227,17 @@ bot.on("message", async message => {
     "conne",
     "salope",
     "merde",
+    "pd",
+    "fdp",
+    "pute",
   ];
+  
+  if(!message.author.hasPermission("MANAGE_MESSAGES")) {
   if (banni.some(x => message.content.toLowerCase().split(/\s+/).includes(x))) {
     message.delete()
     message.reply("Attention à ton langage !");
   }
+}
 });
 
 bot.on('guildMemberAdd', member => {
