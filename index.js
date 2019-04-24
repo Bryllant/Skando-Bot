@@ -163,8 +163,8 @@ bot.on("message", async message => {
   //salut les amis comment ca va
   //les = args[0] amis = args[1]
 
-  if ((message.author.id === "468342061230456833") || message.author.id === "468342061230456833"  ){
-    message.channel.send("@Fortnite News (ancien/family) @Fortnite News")
+  if ((message.author.id === "468342061230456833") || message.author.id === "402528814548254720"  ){
+    message.channel.send("<@&481832130536800277> <@&505758705736744961>")
   }
 
   if (message.author.bot) return;
