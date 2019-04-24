@@ -1,6 +1,6 @@
 const weather = require("weather-js")
 
-module.exports.run = async (bot, message) => {
+module.exports.run = async (bot, message, args) => {
     const lieu = args.join(" ");
     if (!lieu) return message.channel.send(":x: Veuillez insérer le lieu");
     if (lieu === "undefined") return message.channel.send(":x: Veuillez insérer un lieu valide");
