@@ -1,9 +1,9 @@
 const weather = require("weather-js")
-
+const Discord = require("discord.js");
 module.exports.run = async (bot, message, args) => {
     const lieu = args.join(" ");
     if (!lieu) return message.channel.send(":x: Veuillez insérer le lieu");
-    //if (lieu === "undefined") return message.channel.send(":x: Veuillez insérer un lieu valide");
+    if (lieu === "undefined") return message.channel.send(":x: Veuillez insérer un lieu valide");
     weather.find({search: lieu, degreeType: 'C'}, function(err, result) {
         if(err) console.log(err);
 
