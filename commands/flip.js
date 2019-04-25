@@ -5,10 +5,10 @@ module.exports.run = async (bot, message) => {
         const tombe = Math.floor(Math.random() * 2);
         var resultat = "niet"
         if (tombe = 1){
-            resultat = "pile"
+            var resultat = "pile"
         }
         else {
-            resultat = "face"
+            var resultat = "face"
         }
         const filter = m => m.author.id !== bot.user.id;
 
