@@ -8,22 +8,17 @@ module.exports.run = async (bot, message) => {
         if (tombe = 0){
             var resultat = "pile"
         }
-        else {
+        else if (tombe = 1) {
             var resultat = "face"
         }
         const filter = m => m.author.id !== bot.user.id;
 
         const collector = await m.channel.createMessageCollector(filter, {
-            time: 10000
+            time: 5000
         });
 
         collector.on("collect", async (collected) => {
-/*
-            let response = await collected.content.trim();
-            if((response != "pile") || (response != "face")) {
-                return message.channel.send("❌ Ce n'est pas une réponse valide !");
-            }
-*/
+
             if (collected.content.toLowerCase() === "pile") {
                 if (resultat === "pile") {
                     message.channel.send("Vous avez gagné");
