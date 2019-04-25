@@ -2,7 +2,13 @@ const Discord = require('discord.js')
 
 module.exports.run = async (bot, message) => {
     message.channel.send("Pile ou face?").then(async (m) => {
-        const resulat = Math.floor(Math.random() * 2);
+        const tombe = Math.floor(Math.random() * 2);
+        if (tombe = 1){
+            resultat = "pile"
+        }
+        else {
+            resultat = "face"
+        }
         const filter = m => m.author.id !== bot.user.id;
 
         const collector = await m.channel.createMessageCollector(filter, {
