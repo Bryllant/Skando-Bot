@@ -3,42 +3,49 @@ const Client = require("fortnite");
 const fkey = process.env.CLE;
 const fortnite = new Client(fkey)
 module.exports.run = async (bot, message, args) => {
-  let username = args[0];
-  let platform = args[1];
+  await message.delete();
+    let username = args[0];
+    let plateform = args[1] || 'pc';
 
-  if(!username) return message.channel.send("Veuillez entrer un pseudo")
-  if(!platform) return message.channel.send('Veuillez indiquer une plateforme. Syntaxe: **!fortnite <username> <platform>**') 
+    if(!username) return message.reply ("Veuillez entrer un pseudo");
 
-  let data = fortnite.user(username, platform).then(data => {
-      let stats = data.stats;
-      let lifetime = stats.lifetime;
+    fortnite.user(username, plateform).then(data => {
+        console.log(data);
+        var stats = data.stats.lifetime;
 
-      let score = lifetime[6]['Score'];
-      let mplayed = lifetime[7]['Matches Played'];
-      let wins = lifetime[8]['Wins'];
-      let winper = lifetime[9]['Win%'];
-      let kills = lifetime[10]['Kills'];
-      let kd = lifetime[11]['K/d'];
-      let embed = new Discord.RichEmbed()
-      .setTitle("Stats fortnite")
-      .setAuthor(data.username)
-      .setColor("RANDOM")
-      .addField("Top 1", wins, true)
-      .addField("Kills", kills, true)
-      .addField("Score", score, true)
-      .addField("Parties joués", mplayed, true)
-      .addField("% de top 1", winper, true)
-      .addField("K/D", kd, true)
-      .setTimestamp()
-      .setFooter("Demandé par " + message.author.tag, message.author.avatarURL)
 
-      message.channel.send(embed);
-  }).catch((err) => {
-    message.channel.send('Utilisateur introuvable');
-    console.error(err);
-  });
+        var score = "";
+        var matchedplayed = "";
+        //let wins = "";
+        //let winper = lifetime[9];
+        var kills = "";
+        var kd = "";
+
+        stats.find(s => kills = s.Kills);
+        stats.find(s => score = s.Score);
+        stats.find(s => kd = s["K/D"]);
+        stats.find(s => matchedplayed = s["Matches Played"]);
+
+
+        let embed = new Discord.RichEmbed()
+        .setTitle("Stats fortnite")
+        .setAuthor(data.username)
+        .setColor("#008000")
+        //.addField("top 1", wins, true)
+        .addField("Kills", kills, true)
+        .addField("Score", score, true)
+        .addField("Nb de partie", matchedplayed, true)
+        //.addField("% de top 1", winper, true)
+        .addField("k/d", kd, true)
+        message.channel.send(embed)
+    }).catch(err => {
+      console.log(err)
+      message.channel.send("erreur");
+    })
+        
 }
 
+
 module.exports.help = {
-  name:"fortnite"
-} 
+  name: "fortnite"
+}
