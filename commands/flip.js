@@ -3,6 +3,7 @@ const Discord = require('discord.js')
 module.exports.run = async (bot, message) => {
     message.channel.send("Pile ou face?").then(async (m) => {
         var tombe = Math.floor(Math.random() * 2);
+        console.log(tombe)
         var resultat = "niet"
         if (tombe = 1){
             var resultat = "pile"
@@ -17,11 +18,17 @@ module.exports.run = async (bot, message) => {
         });
 
         collector.on("collect", async (collected) => {
+
+            let response = await collected.content.trim();
+            if((response != "pile") || (response != "face")) {
+                return message.channel.send("❌ Ce n'est pas une réponse valide !");
+            }
+
             if (collected.content.toLowerCase() === "pile") {
                 if (resultat === "pile") {
                     message.channel.send("Vous avez gagné");
                 } else {
-                    message.channel.send("Vous avez perdu");
+                    message.channel.send("Vous avez perdu c'est tombé sur face");
                 }
             }
 
@@ -29,7 +36,7 @@ module.exports.run = async (bot, message) => {
                 if (resultat === "face") {
                     message.channel.send("Vous avez gagné");
                 } else {
-                    message.channel.send("Vous avez perdu");
+                    message.channel.send("Vous avez perdu c'est tombé sur pile");
                 }
             }
 
