@@ -2,10 +2,10 @@ const Discord = require('discord.js')
 
 module.exports.run = async (bot, message) => {
     message.channel.send("Pile ou face?").then(async (m) => {
-        var tombe = Math.floor(Math.random() * 3);
+        var tombe = Math.floor(Math.random() * 2);
         console.log(tombe)
         var resultat = "niet"
-        if (tombe = 1){
+        if (tombe = 0){
             var resultat = "pile"
         }
         else {
