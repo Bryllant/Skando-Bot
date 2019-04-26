@@ -1,8 +1,5 @@
 const Discord = require('discord.js')
-
-const Discord = require("discord.js");
-
-module.exports.run = async (client, message) => {
+module.exports.run = async (bot, message) => {
   var randonmes = Math.random().toFixed(2) * 100;
   if (randonmes < 50) {
     message.channel.send(
