@@ -32,6 +32,6 @@ module.exports.run = async (bot, message) => {
   }
 };
 
-module.exports.config = {
+module.exports.help = {
   name: "coinflip"
 };
