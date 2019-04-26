@@ -18,6 +18,7 @@ module.exports.run = (bot, message, args) => {
                 .setTitle("📊 Sondage :")
                 .addField(thingToEcho, "Répondez dès maintenant au sondage avec ✅ ou ❌!")
                 .setColor("#00BFFF")
+            salon.send("<@&505313884073099275> <@&506179552914047006>")
             salon.send(sondage)
         .then(function (message){
             message.react("✅")
@@ -25,6 +26,8 @@ module.exports.run = (bot, message, args) => {
         }).catch(function(){
 
         }); 
+
+        
 }
 
 module.exports.help = {
