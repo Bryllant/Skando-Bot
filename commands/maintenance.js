@@ -1,3 +1,4 @@
+const Discord = require('discord.js')
 module.exports.run = async (bot, message) => {
     var embed = new Discord.RichEmbed()
     .setDescription("Maintenance")

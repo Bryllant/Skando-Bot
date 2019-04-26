@@ -28,7 +28,7 @@ bot.on("ready", (member, users, guild, message) => {
   console.log(bot.user.username + " est en ligne")
 
   //crash
-  crash = bot.guilds.get("469111638835068928").channels.find(`name`, "beta-du-bot");
+ const crash = bot.guilds.get("469111638835068928").channels.find(`name`, "beta-du-bot");
   crash.send(":gear: Je viens de crash mais me re-voila")
 /*
   //stats
@@ -138,13 +138,13 @@ bot.on("messageDelete", async message => {
 });
 
 bot.on("message", async message => {
-  var banni = [
+  var here = [
     "@here",
     "@everyone",
   ];
   
   if (!message.member.hasPermission("ADMINISTRATOR")) {
-  if (banni.some(x => message.content.toLowerCase().split(/\s+/).includes(x))) {
+  if (here.some(x => message.content.toLowerCase().split(/\s+/).includes(x))) {
     message.delete()
     message.reply(":warning: Les mentions here et everyone sont interdites dans ce serveur");
   }
