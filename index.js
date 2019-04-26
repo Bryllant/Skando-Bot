@@ -138,16 +138,27 @@ bot.on("messageDelete", async message => {
 });
 
 bot.on("message", async message => {
-  if ((message.content === "@everyone" || (message.content === "@here")) && (!message.member.hasPermission('MANAGE_MESSAGES'))) {
-    message.reply(':warning: Attention les mentions everyone ou here sont interdits dans ce serveur :warning:');
-    console.log('everyone ou here détecté');
+  var banni = [
+    "@here",
+    "@everyone",
+  ];
+  
+  if (!message.member.hasPermission("ADMINISTRATOR")) {
+  if (banni.some(x => message.content.toLowerCase().split(/\s+/).includes(x))) {
     message.delete()
+    message.reply(":warning: Les mentions here et everyone sont interdites dans ce serveur");
   }
+}
 
-  if ((message.content === "<@403643401137815562>") && (!message.member.hasPermission('MANAGE_MESSAGES'))) {
-    var args = message.content.slice(" ")
+  var skand = [
+    "@Skand_Over_Off"
+  ];
+  
+  if (!message.member.hasPermission("ADMINISTRATOR")) {
+  if (skand.some(x => message.content.toLowerCase().split(/\s+/).includes(x))) {
     message.delete()
   }
+}
 
   if (message.content === "<@530517746677579776>") {
     message.reply('Mon préfixe est **%**, pour voir mes commandes : **%help** ');
