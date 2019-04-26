@@ -1,44 +1,40 @@
 const Discord = require('discord.js')
 
-module.exports.run = async (bot, message) => {
-    message.channel.send("Pile ou face?").then(async (m) => {
-        var tombe = Math.floor(Math.random() * 2);
-        console.log(tombe)
-        var resultat = "niet"
-        if (tombe = 0){
-            var resultat = "pile"
-        }
-        else if (tombe = 1) {
-            var resultat = "face"
-        }
-        const filter = m => m.author.id !== bot.user.id;
+const Discord = require("discord.js");
 
-        const collector = await m.channel.createMessageCollector(filter, {
-            time: 5000
-        });
+module.exports.run = async (client, message) => {
+  var randonmes = Math.random().toFixed(2) * 100;
+  if (randonmes < 50) {
+    message.channel.send(
+      new Discord.RichEmbed()
+        .setColor("RANDOM")
+        .setAuthor(message.member.user.username, message.member.user.avatarURL)
+        .setTitle("Coin flip !")
+        .setDescription("J'ai retourné une pièce et il a atterri **PILE**.")
+    );
+  } else if (randonmes > 50) {
+    message.channel.send(
+      new Discord.RichEmbed()
+        .setColor("RANDOM")
+        .setAuthor(message.member.user.username, message.member.user.avatarURL)
+        .setTitle("Coin flip !")
+        .setDescription(
+          "J'ai retourné une pièce et elle a atterri sur **FACE**."
+        )
+    );
+  } else if (randonmes == 50) {
+    message.channel.send(
+      new Discord.RichEmbed()
+        .setColor("RANDOM")
+        .setAuthor(message.member.user.username, message.member.user.avatarURL)
+        .setTitle("Coin flip !")
+        .setDescription(
+          "J'ai jeté une pièce de monnaie et elle a atterri sur .... LE **BORD** !!!"
+        )
+    );
+  }
+};
 
-        collector.on("collect", async (collected) => {
-
-            if (collected.content.toLowerCase() === "pile") {
-                if (resultat === "pile") {
-                    message.channel.send("Vous avez gagné");
-                } else {
-                    message.channel.send("Vous avez perdu c'est tombé sur face");
-                }
-            }
-
-            if (collected.content.toLowerCase() === "face") {
-                if (resultat === "face") {
-                    message.channel.send("Vous avez gagné");
-                } else {
-                    message.channel.send("Vous avez perdu c'est tombé sur pile");
-                }
-            }
-
-        });
-    })
-}
-
-module.exports.help = {
-    name: "flip"
-}
+module.exports.config = {
+  name: "coinflip",
+};
