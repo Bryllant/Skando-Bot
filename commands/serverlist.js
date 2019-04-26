@@ -4,7 +4,7 @@ module.exports.run = async(bot, message) => {
     (async function() {
         let p0 = 0;
         let p1 = 10;
-        const data = await message.channel.send(bot.guilds.sort((a,b)=>b.memberCount-a.memberCount).map(r=>r).map((r, i) => `[${i + 1}] • Name: \`${r.name.toString()}\`\nUsers: \`${r.memberCount}\``).slice(0, 10).join('\n'));
+        const data = await message.channel.send(bot.guilds.sort((a,b)=>b.memberCount-a.memberCount).map(r=>r).map((r, i) => `[${i + 1}] • Nom: \`${r.name.toString()}\`\nmembres: \`${r.memberCount}\``).slice(0, 10).join('\n'));
         await data.react("⬅");
         await data.react("➡");
         await data.react("❌");
