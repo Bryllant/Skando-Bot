@@ -1,3 +1,5 @@
+const Discord = require('discord.js')
+
 module.exports.run = (bot, message, args) => {
     if(!message.member.hasPermission("MANAGE_MESSAGES")) {
         var error_permissions = new Discord.RichEmbed()
