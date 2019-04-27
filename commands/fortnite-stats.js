@@ -7,7 +7,7 @@ module.exports.run = async (bot, message, args) => {
   let plateforme = args[1];
 
   if(!pseudo) return message.channel.send("Veuillez entrer un pseudo")
-  if(!plateforme) return message.channel.send('Veuillez indiquer une plateforme. Syntaxe: **!fortnite <pseudo> <plateformee>**') 
+  if(!plateforme) return message.channel.send('Veuillez indiquer une plateforme. Syntaxe: **!fortnite <pseudo> <plateforme>**') 
 
   let data = fortnite.user(pseudo, plateforme).then(data => {
       let stats = data.stats;

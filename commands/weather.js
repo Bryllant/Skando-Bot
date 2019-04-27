@@ -3,7 +3,6 @@ const Discord = require("discord.js");
 module.exports.run = async (bot, message, args) => {
     const lieu = args.join(" ");
     if (!lieu) return message.channel.send(":x: Veuillez insérer le lieu");
-    if (lieu === "undefined") return message.channel.send(":x: Veuillez insérer un lieu valide");
     weather.find({search: lieu, degreeType: 'C'}, function(err, result) {
         if(err) console.log(err);
 
@@ -13,9 +12,9 @@ module.exports.run = async (bot, message, args) => {
         var location = result[0].location;
 
         const ville = new Discord.RichEmbed()
-        .setDescription(`**${current.skytext}**`)
-        .setAuthor(`Ville de ${current.observationpoint}`)
-        .setThubnail(current.imageURL)
+        //.setDescription(`**${current.skytext}**`)
+        //.setAuthor(`Ville de ${current.observationpoint}`)
+        //.setThubnail(current.imageURL)
         .setColor("RANDOM")
         .addField("Température", `${current.temperature} degrés`, true)
         .addField("Ressenti", `${current.feelslike}`, true)
