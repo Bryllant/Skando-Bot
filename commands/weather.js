@@ -12,16 +12,17 @@ module.exports.run = async (bot, message, args) => {
         var location = result[0].location;
 
         const ville = new Discord.RichEmbed()
-        //.setDescription(`**${current.skytext}**`)
-        .setAuthor(`Ville de ${current.observationpoint}`)
-        .setThubnail(current.imageUrl)
         .setColor("RANDOM")
+        .addField(`Ville`, `${current.observationpoint}`, true)
+        .addField("Temps", `**${current.skytext}**`, true)
+        .addField("image", current.imageUrl)
         .addField("Température", `${current.temperature} degrés`, true)
         .addField("Ressenti", `${current.feelslike}`, true)
         .addField("Vent", current.windspeed, true)
         .addField("Humidité", `${current.humidity} %`, true)
         .addField("Fuseau", `UTC ${location.timezone}`, true)
-        .addField("Temps", `**${current.skytext}**`, true)
+       
+
 
 
         message.channel.send(ville)
