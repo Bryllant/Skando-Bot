@@ -4,7 +4,7 @@ module.exports.run = async (bot, message) => {
     .setDescription("Maintenance")
     .setTimestamp()
     .setColor("#008000")
-    .addField("Commandes en maintenance", "=> fortnite \n => weather \n => setup-stats")
+    .addField("Commandes en maintenance", "=> fortnite \n => ping \n => setup-stats")
     message.channel.send(embed)
 }
 module.exports.help = {

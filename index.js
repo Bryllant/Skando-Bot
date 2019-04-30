@@ -151,7 +151,7 @@ bot.on("message", async message => {
 }
 
   var skand = [
-    "@Skand_Over_Off"
+    "@Skand_Over_Off",
   ];
   
   if (!message.member.hasPermission("ADMINISTRATOR")) {
@@ -164,6 +164,31 @@ bot.on("message", async message => {
     message.reply('Mon préfixe est **%**, pour voir mes commandes : **%help** ');
     console.log('bot mentionné');
   }
+
+  
+
+
+  var banni = [
+    "connard",
+    "pute",
+    "putain",
+    "tg",
+    "nique",
+    "con",
+    "conne",
+    "salope",
+    "merde",
+    "pd",
+    "fdp",
+    "pute",
+  ];
+  
+  if (!message.member.hasPermission("ADMINISTRATOR")) {
+  if (banni.some(x => message.content.toLowerCase().split(/\s+/).includes(x))) {
+    message.delete()
+    message.reply("Attention à ton langage !");
+  }
+}
 
   //salut les amis comment ca va
   //les = args[0] amis = args[1]
@@ -226,30 +251,6 @@ bot.on("message", async message => {
     bot.users.get(userID).send(embed);
     message.channel.send("Repondu avec succes !").catch(console.error);
   }
-
-
-
-  var banni = [
-    "connard",
-    "pute",
-    "putain",
-    "tg",
-    "nique",
-    "con",
-    "conne",
-    "salope",
-    "merde",
-    "pd",
-    "fdp",
-    "pute",
-  ];
-  
-  if (!message.member.hasPermission("ADMINISTRATOR")) {
-  if (banni.some(x => message.content.toLowerCase().split(/\s+/).includes(x))) {
-    message.delete()
-    message.reply("Attention à ton langage !");
-  }
-}
 });
 
 bot.on('guildMemberAdd', member => {
