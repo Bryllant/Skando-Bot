@@ -6,10 +6,10 @@ module.exports.run = async (bot, message, args) => {
     if(!bUser) return message.channel.send("❌ Utilisateur introuvable ou non spécifié");
     let bReason = args.join(" ").slice(22);
     if(!bReason) return message.channel.send("❌ Votre syntaxe est incorrecte. \n```Syntaxe : %annonce <pseudo> <raison>```");
-    //if(!message.member.hasPermission("MANAGE_MESSAGES")) {
-        // message.channel.send("❌ Vous n'avez pas les permissions, vous devez être au minimum modérateur");
-    //}
-    //if(bUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send("❌ Cette personne ne peut pas être exclue");
+    if(!message.member.hasPermission("MANAGE_MESSAGES")) {
+         message.channel.send("❌ Vous n'avez pas les permissions, vous devez être au minimum modérateur");
+    }
+    if(bUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send("❌ Cette personne ne peut pas être exclue");
   
     let banEmbed = new Discord.RichEmbed()
     .setDescription("~Ban~")
