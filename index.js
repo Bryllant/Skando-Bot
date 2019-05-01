@@ -138,17 +138,73 @@ bot.on("messageDelete", async message => {
 });
 
 bot.on("message", async message => {
+
+  if (message.author.bot) return;
+  if (message.channel.type === "dm") {
+    var args = message.content.split(" ").slice(0);
+    var args = args.slice(0).join(" ");
+
+    if ((message.author.id != "364468738621308938") || (message.author.id != "468342061230456833")) {
+      message.channel.send(
+        "Votre message a été envoyé au staff :incoming_envelope:"
+      );
+    } else {
+      return message.channel.send("réponse envoyé!")
+    }
+
+    if (message.content.startsWith("%")) return;
+    var embed = new Discord.RichEmbed()
+      .setColor("RANDOM")
+      .setTitle("Nouvelle demande en dm")
+      .addField(
+        args,
+        "Envoyé par " +
+        message.author.username +
+        " avec l'id " +
+        message.author.id
+      );
+    bot.guilds
+      .get("469111638835068928")
+      .channels.get("568201680454418473")
+      .send(embed);
+  }
+
+  if (message.content.startsWith("dm.reply")) {
+    if (
+      message.author.id !== "364468738621308938" ||
+      message.author.id !== "468342061230456833"
+    )
+
+    var args = message.content.split(" ").slice(0);
+    var Rargs = message.content
+      .split(" ")
+      .slice(2)
+      .join(" ");
+    var userID = args[1];
+    if (isNaN(args[1]))
+      return message.reply(
+        "Veuillez preciser l'id de la personne pour reply"
+      );
+    var embed = new Discord.RichEmbed()
+      .setColor("RANDOM")
+      .setTitle("Le staff vous a repondu")
+      .setDescription(Rargs)
+      .setFooter("ce message a été envoyé par: " + message.author.username);
+    bot.users.get(userID).send(embed);
+    message.channel.send("Repondu avec succes !").catch(console.error);
+  }
+
   var here = [
     "@here",
     "@everyone",
   ];
   
   if (!message.member.hasPermission("ADMINISTRATOR")) {
-  if (here.some(x => message.content.toLowerCase().split(/\s+/).includes(x))) {
-    message.delete()
-    message.reply(":warning: Les mentions here et everyone sont interdites dans ce serveur");
+    if (here.some(x => message.content.toLowerCase().split(/\s+/).includes(x))) {
+      message.delete()
+      message.reply("Les mentions here et everyone sont interdites dans ce serveur");
+    }
   }
-}
 
   var skand = [
     "<@403643401137815562>",
@@ -192,61 +248,6 @@ bot.on("message", async message => {
 
   //salut les amis comment ca va
   //les = args[0] amis = args[1]
-
-  if (message.author.bot) return;
-  if (message.channel.type === "dm") {
-    var args = message.content.split(" ").slice(0);
-    var args = args.slice(0).join(" ");
-
-    if ((message.author.id != "364468738621308938") || (message.author.id != "468342061230456833")) {
-      message.channel.send(
-        "Votre message a été envoyé au staff :incoming_envelope:"
-      );
-    } else {
-      return message.channel.send("réponse envoyé!")
-    }
-
-    if (message.content.startsWith("%")) return;
-    var embed = new Discord.RichEmbed()
-      .setColor("RANDOM")
-      .setTitle("Nouvelle demande en dm")
-      .addField(
-        args,
-        "Envoyé par " +
-        message.author.username +
-        " avec l'id " +
-        message.author.id
-      );
-    bot.guilds
-      .get("469111638835068928")
-      .channels.get("568201680454418473")
-      .send(embed);
-  }
-
-  if (message.content.startsWith("dm.reply")) {
-    if (
-      message.author.id !== "364468738621308938" ||
-      message.author.id !== "468342061230456833"
-    )
-
-      var args = message.content.split(" ").slice(0);
-    var Rargs = message.content
-      .split(" ")
-      .slice(2)
-      .join(" ");
-    var userID = args[1];
-    if (isNaN(args[1]))
-      return message.reply(
-        "Veuillez preciser l'id de la personne pour reply"
-      );
-    var embed = new Discord.RichEmbed()
-      .setColor("RANDOM")
-      .setTitle("Le staff vous a repondu")
-      .setDescription(Rargs)
-      .setFooter("ce message a été envoyé par: " + message.author.username);
-    bot.users.get(userID).send(embed);
-    message.channel.send("Repondu avec succes !").catch(console.error);
-  }
 });
 
 bot.on('guildMemberAdd', member => {
