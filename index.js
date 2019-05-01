@@ -2,7 +2,13 @@ const Discord = require("discord.js")
 const bot = new Discord.Client();
 const fs = require("fs");
 bot.commands = new Discord.Collection();
-const config = require('./config.json');
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  transports: [
+    new winston.transports.File({ filename: 'selfbot.log' })
+  ]
+});
 
 
 fs.readdir("./commands/", (err, files) => {
@@ -229,6 +235,12 @@ for (x = 0; x < profanities.length; x++) {
       }
     }
   }
+
+  if (message.nonce === null && message.attachments.size <= 0 && !message.author.bot && message.guild) {// make sure it's a non-private messages
+            logger.warn(`L'utilisateur (${message.author.tag}) utilise un selfbot dans le salon #${message.channel.name} serveur (${message.guild.name} ) - ID: ${message.author.id}`);
+             message.delete().catch(() => logger.log(`Le bot ne peut pas supprimer un message de cet utilisateur ${message.author.tag}!`));
+             message.member.ban(7)
+            }
   //salut les amis comment ca va
   //les = args[0] amis = args[1]
 });
