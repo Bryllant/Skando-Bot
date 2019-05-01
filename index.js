@@ -246,6 +246,14 @@ bot.on("message", async message => {
   }
 }
 
+const profanities = require("profanities/fr");
+for (x = 0; x < profanities.length; x++) {
+      if (message.content.toUpperCase() == profanities[x].toUpperCase()) {
+        message.delete();
+        message.reply("Ce mot est inscrit sur la blacklist générale");
+      }
+    }
+    
   //salut les amis comment ca va
   //les = args[0] amis = args[1]
 });
