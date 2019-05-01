@@ -199,7 +199,7 @@ bot.on("message", async message => {
     "@everyone",
   ];
   
-  if (!message.member.hasPermission("ADMINISTRATOR")) {
+  if (!message.member.hasPermission("MANAGE_MESSAGES")) {
     if (here.some(x => message.content.toLowerCase().split(/\s+/).includes(x))) {
       message.delete()
       message.reply("Les mentions here et everyone sont interdites dans ce serveur");
@@ -210,7 +210,7 @@ bot.on("message", async message => {
     "<@403643401137815562>",
   ];
   
-  if (!message.member.hasPermission("ADMINISTRATOR")) {
+  if (!message.member.hasPermission("MANAGE_MESSAGES")) {
   if (skand.some(x => message.content.toLowerCase().split(/\s+/).includes(x))) {
     message.delete()
   }
@@ -220,40 +220,15 @@ bot.on("message", async message => {
     message.reply('Mon préfixe est **%**, pour voir mes commandes : **%help** ');
     console.log('bot mentionné');
   }
-
-  
-
-
-  var banni = [
-    "connard",
-    "pute",
-    "putain",
-    "tg",
-    "nique",
-    "con",
-    "conne",
-    "salope",
-    "merde",
-    "pd",
-    "fdp",
-    "pute",
-  ];
-  
-  if (!message.member.hasPermission("ADMINISTRATOR")) {
-  if (banni.some(x => message.content.toLowerCase().split(/\s+/).includes(x))) {
-    message.delete()
-    message.reply("Attention à ton langage !");
-  }
-}
-
+if (!message.member.hasPermission("MANAGE_MESSAGES")) {
 const profanities = require("profanities/fr");
 for (x = 0; x < profanities.length; x++) {
       if (message.content.toUpperCase() == profanities[x].toUpperCase()) {
         message.delete();
-        message.reply("Ce mot est inscrit sur la blacklist générale");
+        message.reply("Surveille ton language");
       }
     }
-    
+  }
   //salut les amis comment ca va
   //les = args[0] amis = args[1]
 });
