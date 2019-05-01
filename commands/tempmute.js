@@ -4,7 +4,7 @@ const ms = require("ms");
 module.exports.run = async (bot, message, args) => {
 
   //!tempmute @user 1s/m/h/d
-
+  if (!message.member.hasPermission("MANAGE_ROLES")) return message.channel.send("Vous n'avez pas les permissions nécessaires");
   let tomute = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
   if(!tomute) return message.reply("Impossible de trouver l'utilisateur");
   if(tomute.hasPermission("MANAGE_MESSAGES")) return message.reply("Je ne peux pas mute cette personne!");
@@ -32,11 +32,14 @@ module.exports.run = async (bot, message, args) => {
   if(!mutetime) return message.reply("Veuillez indiquer une durée");
 
   await(tomute.addRole(muterole.id));
+  let gRole = member.roles.map(role => role)
+  await tomute.removeRole(gRole.id)
+
   message.reply(`<@${tomute.id}> a été mute pour ${ms(ms(mutetime))}`);
 
   setTimeout(function(){
     tomute.removeRole(muterole.id);
-    message.channel.send(`<@${tomute.id}> a été mute`);
+    message.channel.send(`<@${tomute.id}> a été demute`);
   }, ms(mutetime));
 
 
@@ -46,3 +49,4 @@ module.exports.run = async (bot, message, args) => {
 module.exports.help = {
   name: "tempmute"
 }
+
