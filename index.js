@@ -151,7 +151,7 @@ bot.on("message", async message => {
 }
 
   var skand = [
-    "@Skand_Over_Off",
+    "<@403643401137815562>",
   ];
   
   if (!message.member.hasPermission("ADMINISTRATOR")) {
@@ -192,10 +192,6 @@ bot.on("message", async message => {
 
   //salut les amis comment ca va
   //les = args[0] amis = args[1]
-
-  if (message.author.id === "436212260587831316"){
-    message.channel.send("<@&481832130536800277> <@&505758705736744961>")
-  }
 
   if (message.author.bot) return;
   if (message.channel.type === "dm") {
