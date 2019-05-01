@@ -32,9 +32,6 @@ module.exports.run = async (bot, message, args) => {
   if(!mutetime) return message.reply("Veuillez indiquer une durée");
 
   await(tomute.addRole(muterole.id));
-  let gRole = member.roles.map(role => role)
-  await tomute.removeRole(gRole.id)
-
   message.reply(`<@${tomute.id}> a été mute pour ${ms(ms(mutetime))}`);
 
   setTimeout(function(){
