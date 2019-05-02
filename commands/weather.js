@@ -15,7 +15,7 @@ module.exports.run = async (bot, message, args) => {
         .setColor("RANDOM")
         .addField(`Ville`, `${current.observationpoint}`, true)
         .addField("Temps", `**${current.skytext}**`, true)
-        .addField("image", current.imageUrl)
+        .setThumbnail(current.imageUrl)
         .addField("Température", `${current.temperature} degrés`, true)
         .addField("Ressenti", `${current.feelslike}`, true)
         .addField("Vent", current.windspeed, true)
