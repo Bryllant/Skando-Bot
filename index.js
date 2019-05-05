@@ -246,7 +246,7 @@ for (x = 0; x < profanities.length; x++) {
   //les = args[0] amis = args[1]
 });
 
-ot.on('guildMemberAdd', async (message, member) => {
+bot.on('guildMemberAdd', async (message, member) => {
   const aurevoir = member.guild.channels.find('name', '『🎉』bienvenue')
   member.send("Passe du bon temps sur Skando'Team !  Tu dois aussi consulter les règles du serveur elles sont importantes pour que ce serveur Discord soit agréable !")
   let embed = new Discord.RichEmbed()
