@@ -2,8 +2,6 @@ const Discord = require('discord.js')
 
 module.exports.run = async (bot, message, args) => { 
 
-  if(!message.member.hasPermission("ADMINISTRATOR")) return;
-  
     let query = args.slice(1).join(" ");
     if(!query) {
         return message.channel.send("⚠ Veuillez inclure un texte !");

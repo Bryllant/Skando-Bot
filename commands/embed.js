@@ -14,7 +14,7 @@ module.exports.run = async (bot, message, args) => {
     const toslice = Math.floor(prefix.length + 7 + color.length);
     const titre = message.content.split("/")[0].slice(toslice);
     const description = message.content.split("/")[1].slice(1);
-
+    
     const embed = new Discord.RichEmbed()
     .setColor(color)
     .setTitle(titre)

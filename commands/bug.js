@@ -4,11 +4,9 @@ module.exports.run = async (bot, message) => {
 
     let args = message.content.split(' ').slice(1).join(' ');
 
-    if(!args) return message.channel.send(`Veuillez inscrire les bugs trouvés`);
+    if(!args) return message.channel.send("❌ Votre syntaxe est incorrecte. \n```Syntaxe : %bug <bug trouvé>```");
 
-    //if(["@_everyone", "@_here"].some(ping => args.includes(ping))) return message.channel.send(`⚠ Les mentions @_everyone ou @_here sont désactivées !`);
-
-    message.channel.send(`Votre rapport de bug a été envoyé au staff! Merci pour l'aide !`);
+    message.channel.send(`✅ Votre rapport de bug a été envoyé au staff! Merci pour l'aide !`);
 
     let embed = new Discord.RichEmbed()
     .setColor('RANDOM')

@@ -7,7 +7,7 @@ module.exports.run = async (bot, message) => {
       return message.channel.send("⚠ Ce n'est pas une limite valide, veuillez taper un nombre !");
     }
         
-    message.channel.send(`Que le juste prix commence commence ! Vous avez **1** minutes pour trouver un nombre compris entre **0** et **${limit2}**`)
+    message.channel.send(`Que le juste prix commence commence ! Vous avez **1** minutes pour trouver un nombre compris entre **0** et **${limit2}** \nVous pouvez annuler le bingo en écrivant annuler`)
         .then(async(m) => {
             const random = Math.floor(Math.random() * limit2);
             const filter = m => m.author.id !== bot.user.id;
