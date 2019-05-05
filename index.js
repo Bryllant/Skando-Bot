@@ -228,6 +228,7 @@ bot.on("message", async message => {
   }
 if (!message.member.hasPermission("MANAGE_MESSAGES")) {
 const profanities = require("profanities/fr");
+var x = 0
 for (x = 0; x < profanities.length; x++) {
       if (message.content.toUpperCase() == profanities[x].toUpperCase()) {
         message.delete();
