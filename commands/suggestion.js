@@ -21,7 +21,7 @@ module.exports.run = async (bot, message) => {
     .setFooter(`Suggestion`)
     .setTimestamp()
     
-    salon = bot.guilds.get("469111638835068928").channels.find(`name`, "『🔒』modos");
+    let salon = bot.guilds.get("469111638835068928").channels.find(`name`, "『🔒』modos");
     salon.send(embed);
     }
 };
