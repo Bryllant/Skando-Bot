@@ -13,7 +13,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.18.0",
     "canvas": "^2.4.1",
+    "canvas-constructor": "^3.0.1",
     "discord.js": "^11.4.2",
     "enmap": "^4.8.1",
     "figlet": "^1.2.1",

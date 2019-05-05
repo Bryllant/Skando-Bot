@@ -253,6 +253,25 @@ bot.on('guildMemberAdd', member => {
     .setFooter('Nous sommes désormais ' + member.guild.memberCount)
     .setColor("#008000")
   aurevoir.send(embed)
+
+  const shortcode = n => {
+    const possible =
+      "ABCDEFGHIJKLMNPQRSTUVWXYZabcdefghjklmnopqrstuvwxyz0123456789";
+    let text = "";
+    for (var i = 0; i < n + 1; i++)
+      text += possible.charAt(Math.floor(Math.random() * possible.length));
+    return text;
+  };
+member.send("votre code est "+shortcode(10)+" utiliser la commandes \"commandes\" " + shortcode(10) +"dans le serveur ")
+  this.bot.token.set(`${member.id}-${member.guilds.id}`, shortcode(10), "token");
+  //commandes
+  if (args != this.bot.token.get(`${message.author.id}-${member.guilds.id}`, "token")) {
+    message.channel.send("code faux");
+  } else {
+    const verif = message.guild.roles.find(c => c.name === "verif");
+    const user = message.guild.member(message.author);
+    user.addRole(verif.id);
+  }
 });
 
 bot.on('guildMemberRemove', member => {
