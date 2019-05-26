@@ -3,7 +3,7 @@ const Discord = require("discord.js");
 module.exports.run = async (bot, message, args) => {
 
   //!addrole @andrew Dog Person
-  if (!message.member.hasPermission("MANAGE_ROLES")) return message.channel.send("Vous n'avez pas les permissions nécessaires");
+  //if (!message.member.hasPermission("MANAGE_ROLES")) return message.channel.send("Vous n'avez pas les permissions nécessaires");
   if (args[0] == "help") {
     message.reply("Usage: !addrole <utilisateur> <role>");
     return;
