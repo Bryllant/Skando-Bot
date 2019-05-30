@@ -36,20 +36,19 @@ bot.on("ready", (member, users, guild, message) => {
   //crash
  const crash = bot.guilds.get("469111638835068928").channels.find(`name`, "beta-du-bot");
   crash.send(":gear: Je viens de crash mais me re-voila")
-/*
+
   //stats
   
   bot.channels.find(c => c.id === "569197036314951697").setName("『🧔』Utilisateurs : " + guild.memberCount) //user
   bot.channels.find(c => c.id === "569197977961365634").setName("『🧮』Connectés : " + guild.members.filter(member => member.presence.status != "offline").size, true) //connectés
   bot.channels.find(c => c.id === "569197912685412372").setName("『🧾』Bot : " + guild.members.filter(member => member.user.bot === true).size, true) //channel
   bot.channels.find(c => c.id === "569198016867729435").setName("『🔑』Channel : " + guild.channelCount) //bot
-  */
-
+ /* 
   bot.channels.find(c => c.id === "569197036314951697").setName("『🧔』Utilisateurs : " + guild.users.size) //user
   bot.channels.find(c => c.id === "569197977961365634").setName("『🧮』Connectés : " + bot.guilds.size) //connectés
   bot.channels.find(c => c.id === "569197912685412372").setName("『🧾』Bot : " + "8") //channel
   bot.channels.find(c => c.id === "569198016867729435").setName("『🔑』Channel : " + bot.channels.size) //bot
-  
+  */
 });
 
 bot.on("message", async message => {
