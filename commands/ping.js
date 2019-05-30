@@ -13,7 +13,7 @@ message.channel.send("Pong!");
         .setColor(0x5d6d7E)
         .setDescription('⏲  Ping du bot ***' + ((new Date() - message.createdTimestamp)/200).toFixed(0) + ' ms***\n💓 Ping de l\'API***' + Math.round(client.ping).toFixed(0) + '  ms***\n🖥Ping du serveur: ***'+data.server.ping+'***')
         .setFooter(`Upload: ${data.speeds.upload} Download: ${data.speeds.download}`)
-        msg.edit("Ping en général",embed)
+        msg.edit("Ping en général", embed)
       }) ;
    })
 
