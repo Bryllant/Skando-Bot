@@ -45,7 +45,7 @@ bot.on("ready", (member, users, guild, message) => {
   bot.channels.find(c => c.id === "569198016867729435").setName("『🔑』Channel : " + guild.channelCount) //bot
   */
 
-  bot.channels.find(c => c.id === "569197036314951697").setName("『🧔』Utilisateurs : " + bot.users.size) //user
+  bot.channels.find(c => c.id === "569197036314951697").setName("『🧔』Utilisateurs : " + guild.users.size) //user
   bot.channels.find(c => c.id === "569197977961365634").setName("『🧮』Connectés : " + bot.guilds.size) //connectés
   bot.channels.find(c => c.id === "569197912685412372").setName("『🧾』Bot : " + "8") //channel
   bot.channels.find(c => c.id === "569198016867729435").setName("『🔑』Channel : " + bot.channels.size) //bot
