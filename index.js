@@ -246,35 +246,16 @@ for (x = 0; x < profanities.length; x++) {
   //les = args[0] amis = args[1]
 });
 
-bot.on('guildMemberAdd', async (message, member, guild) => {
+bot.on('guildMemberAdd', member => {
   const aurevoir = member.guild.channels.find('name', '『🎉』bienvenue')
-  member.send("Passe du bon temps sur Skando'Team !  Tu dois aussi consulter les règles du serveur elles sont importantes pour que ce serveur Discord soit agréable !")
+  member.send("Bienvenu sur le serveur n'hésite pas a lire les règles elles sont impotantes au bon onctionnement du serveur")
   let embed = new Discord.RichEmbed()
-    .setDescription(member.user.username + ' a rejoint le serveur')
+    .setDescription(member.user.username + ' a rejoins le serveur')
     .setFooter('Nous sommes désormais ' + member.guild.memberCount)
     .setColor("#008000")
   aurevoir.send(embed)
-
-  const shortcode = n => {
-    const possible =
-      "ABCDEFGHIJKLMNPQRSTUVWXYZabcdefghjklmnopqrstuvwxyz0123456789";
-    let text = "";
-    for (var i = 0; i < n + 1; i++)
-      text += possible.charAt(Math.floor(Math.random() * possible.length));
-    return text;
-  };
-member.send("votre code est "+shortcode(10)+" utiliser la commandes \"%mdp\" " + shortcode(10) +"dans le serveur ")
-  this.bot.token.set(`${member.id}-${member.guilds.id}`, shortcode(10), "token");
-  //commandes
-  let args = message.content.split(' ').slice(1).join(' ');
-  if (args != this.bot.token.get(`${message.author.id}-${member.guilds.id}`, "token")) {
-    message.channel.send("code faux");
-  } else {
-    const verif = message.guild.roles.find(c => c.name === "verif");
-    const user = message.guild.member(message.author);
-    user.addRole(verif.id);
-  }
 });
+
 
 bot.on('guildMemberRemove', member => {
   const aurevoir = member.guild.channels.find('name', '『🎉』bienvenue')
