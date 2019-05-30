@@ -6,7 +6,7 @@ module.exports.run = async (bot, message) => {
 
     let nom = message.content.split(' ').slice(1).join(' ');
 
-    if(!nom) return message.channel.send(`Veuillez inscrire votre suggestion`);
+    if(!nom) return message.channel.send(`Veuillez inscrire le nom du futur channel`);
     
     await message.guild.createChannel(nom, "text")
 }
