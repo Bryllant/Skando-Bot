@@ -30,6 +30,6 @@ module.exports.run = async(bot, message) => {
       channel.setParent(category.id);
     }).catch(console.error);
   })}
-    module.exports.help = {
-        name: 'ticket-new',
-    };
+  module.exports.help = {
+    name: "ticket"
+  }
