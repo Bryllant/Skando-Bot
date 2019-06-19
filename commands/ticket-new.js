@@ -1,5 +1,5 @@
 module.exports.run = async(bot, message) => {  
-    message.guild.createChannel(`ticket-${message.author.discriminator}`, {type : 'text'})
+    message.guild.createChannel(`ticket-${message.author.discriminator}`, "text")
   
     .then(async channel => {
       let category = message.guild.channels.find(c => c.name == "Ticket" && c.type == "category");
