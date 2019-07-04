@@ -5,7 +5,7 @@ message.channel.send("Pong!");
 var embed = new Discord.RichEmbed()
         .setTimestamp() 
         .setTitle("Latence")
-        .addField("- `Ping du bot` → " + Math.round(bot.ping)+" ms") 
+        .addField("- `Ping du bot` → ", Math.round(bot.ping)+" ms") 
         .setColor("RANDOM") 
      
         message.channel.send(embed) 
