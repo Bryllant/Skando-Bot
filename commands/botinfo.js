@@ -12,7 +12,7 @@ const Discord = require('discord.js');
         .setColor("RANDOM")
         .setAuthor(bot.user.username, bot.user.displayAvatarURL)
         .setDescription("**• Informations du bot •**")
-        .addField("👑 Créateurs →", "- ``<@468342061230456833>", true)
+        .addField("👑 Créateurs →", "- <@468342061230456833>", true)
         .addField("⏲ Uptime →", `__${days}__ j, __${hours}__ h, __${minutes}__ m et __${seconds}__ s`, true)
         .addBlankField()
         .addField("📰 Informations →", `- \`ID\` → ${bot.user.id}\n- \`Langage\` → Français\n- \`Création\` → Janvier 2019\n- \`Préfix\` → %`, true)
