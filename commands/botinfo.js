@@ -1,5 +1,6 @@
-    module.exports.run = async (bot, config, message, args, functions) => {
-    const Discord = require('discord.js')
+const Discord = require('discord.js');
+
+    module.exports.run = async (bot, message) => {
     let totalSeconds = (bot.uptime / 1000);
     let days = Math.floor(totalSeconds / 86400);
     let hours = Math.floor(totalSeconds / 3600);
@@ -7,7 +8,7 @@
     let minutes = Math.floor(totalSeconds / 60);
     let seconds = parseInt(totalSeconds % 60);
 
-    let BotinfoEmbed = new Discord.RichEmbed()
+    let embed = new Discord.RichEmbed()
         .setColor("RANDOM")
         .setAuthor(bot.user.username, bot.user.displayAvatarURL)
         .setDescription("**• Informations du bot •**")
@@ -19,7 +20,7 @@
         .setFooter("Bryllant x)", bot.user.displayAvatarURL)
         .setTimestamp();
 
-    message.channel.send(BotinfoEmbed);
+    message.channel.send(embed);
 
 }
 
