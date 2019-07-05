@@ -6,7 +6,7 @@ module.exports.run = async (bot, message) => {
     .setTimestamp()
     .setColor("#008000")
     .setTitle("%help")
-    .addField("Utilitaires (16)", "`botinfo` `bug` `createur` `fortnite` `invite` `ping` `server` `serverinfo` `serverlist` `suggestion` `uptime` `weather` `youtube` `membercount` `maintenance` `commun` `ticket-new`")
+    .addField("Utilitaires (16)", "`botinfo` `bug` `createur` `fortnite` `invite` `ping` `server` `serverinfo` `serverlist` `suggestion` `uptime` `weather` `youtube` `membercount` `maintenance` `commun` `ticket`")
     .addField("Modération (16)", "`annonce` `ban` `clear` `embed` `game` `kick` `mp` `pub` `regle` `salon` `setup` `sondage` `removerole` `addrole` `tempmute` `create-channel`")
     .addField("Images (3)", "`cat` `dog` `pdp`")
     .addField("Fun (8)", "`ascii` `bingo` `juste-prix` `lettres-caches` `qr` `say` `virus` `coinflip`")
