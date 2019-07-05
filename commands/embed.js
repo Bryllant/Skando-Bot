@@ -8,7 +8,7 @@ module.exports.run = async (bot, message, args) => {
     prefix = "?"
 
 
-    if(!args[0]) return message.channel.send("Il faut des arguments !");
+    if(!args[0]) return message.channel.send("`%embed <Couleur> <titre> / <description>`");
 
     const color = args[0];
     const toslice = Math.floor(prefix.length + 7 + color.length);
