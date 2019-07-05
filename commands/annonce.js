@@ -9,7 +9,7 @@ module.exports.run = (bot, message, args) => {
     }
 
     let salonAnnonce = message.guild.channels.find(`name`, "『📝』informations-serveur");
-    if (!message.member.hasPermission('MANAGE_MESSAGE')) return message.channel.send("❌ Vous n'avez pas les permissions, vous devez être au minimum modérateur")
+    if (!message.member.hasPermission('MANAGE_MESSAGES')) return message.channel.send("❌ Vous n'avez pas les permissions, vous devez être au minimum modérateur")
     if (message.member.hasPermission("MANAGE_MESSAGES")) {
         let arg = message.content.split(" ").slice(1);
         let contenu = arg.join(" ");
