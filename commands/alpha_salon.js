@@ -66,5 +66,5 @@ channel.overwritePermissions(message.guild.id, {
 }).catch(console.error);
 } 
   module.exports.help = {
-    name: "aticket"
+    name: "gaticket"
   }
