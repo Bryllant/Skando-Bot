@@ -74,7 +74,7 @@ bot.login(process.env.TOKEN);
 
 bot.on("ready", async message => {
   console.log(`Le bot est allumé sur ${bot.guilds.size} serveurs et est a disposition de ${bot.users.size} membres `)
-/*
+
   var jeuxs = [
     "modérer le discord de Skand",
     `faire des crêpes`,
@@ -96,7 +96,6 @@ bot.on("ready", async message => {
       }
     });
   }, 60000);
-*/
 });
 
 bot.on("messageUpdate", (oldMessage, newMessage, message, member) => {
