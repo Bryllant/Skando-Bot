@@ -14,7 +14,7 @@ module.exports.run = (bot, message, args) => {
         let content_msg = arg.join(" ");
         if(!args[0]) return message.channel.send(":pushpin: Votre syntaxe est incorrecte. \n```Syntaxe : %mp [Utilisateur] [Message]```");
         member.send(`:pushpin: | Vous avez reçu un message de **${message.author.tag}** depuis le serveur **${message.guild.name}** : **` + content_msg + `**`)
-        message.channel.send(`<:true:551460100347396107> | Votre message privé a bien été envoyé à **${member.user.tag}** !`)
+        message.channel.send(`:pushpin: | Votre message privé a bien été envoyé à **${member.user.tag}** !`)
         message.delete();
     }
 }
